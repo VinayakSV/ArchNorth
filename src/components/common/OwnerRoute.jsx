@@ -4,7 +4,7 @@ import { auth, signInWithGoogle, signOutUser } from '../../lib/firebase';
 import { Box, Button, Typography, CircularProgress } from '@mui/material';
 import { Google, Lock } from '@mui/icons-material';
 
-const OWNER_EMAIL = 'vinfin1323@gmail.com';
+const OWNER_EMAIL = 'vinayakvsvs@gmail.com';
 
 export default function OwnerRoute({ children }) {
   const [user, setUser] = useState(undefined); // undefined = auth not resolved yet

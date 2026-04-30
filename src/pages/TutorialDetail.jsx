@@ -170,6 +170,9 @@ export default function TutorialDetail() {
 
   const interviewBlocks = useMemo(() => extractInterviewBlocks(content), [content]);
 
+  const tutorial = getTutorialById(id);
+  const { prev, next } = useMemo(() => getAdjacentTutorials(id), [id]);
+
   const exportNotesAsMd = useCallback(() => {
     if (notes.length === 0) return;
     const md = `# Notes: ${tutorial?.title || id}\n_Exported from ArchNorth on ${new Date().toLocaleDateString()}_\n\n---\n\n` +
@@ -182,8 +185,6 @@ export default function TutorialDetail() {
     a.click();
     URL.revokeObjectURL(url);
   }, [notes, tutorial, id]);
-  const tutorial = getTutorialById(id);
-  const { prev, next } = useMemo(() => getAdjacentTutorials(id), [id]);
   const loadIdRef = useRef(0);
 
   const readingTime = useMemo(() => content ? getReadingTime(content) : '', [content]);
