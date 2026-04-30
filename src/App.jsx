@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ThemeProvider from './context/ThemeProvider';
 import Layout from './components/layout/Layout';
+import OwnerRoute from './components/common/OwnerRoute';
 import { Box, CircularProgress } from '@mui/material';
 
 const Landing = lazy(() => import('./pages/Landing'));
@@ -34,7 +35,7 @@ export default function App() {
               <Route path="/tutorials" element={<Tutorials />} />
               <Route path="/tutorials/:id" element={<TutorialDetail />} />
               <Route path="/notes" element={<Notes />} />
-              <Route path="/progress" element={<ProgressTracker />} />
+              <Route path="/progress" element={<OwnerRoute><ProgressTracker /></OwnerRoute>} />
               <Route path="/license" element={<LicenseReport />} />
             </Route>
           </Routes>

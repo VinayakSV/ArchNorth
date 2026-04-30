@@ -85,8 +85,13 @@ export default function Landing() {
         </Container>
       </Box>
 
-      <Box sx={{ textAlign: 'center', py: 3 }}>
-        <Typography variant="caption" color="text.secondary">ArchNorth — Find your direction in tech ✨</Typography>
+      <Box sx={{ textAlign: 'center', py: 3, px: 2 }}>
+        <Typography variant="caption" color="text.secondary">
+          ArchNorth — Find your direction in tech ✨
+        </Typography>
+        <Typography variant="caption" color="text.disabled" sx={{ display: 'block', mt: 0.5, fontSize: '0.65rem' }}>
+          Free educational platform · No accounts · No ads · Analytics uses cookie-less mode (GDPR-compliant)
+        </Typography>
       </Box>
     </Box>
   );
