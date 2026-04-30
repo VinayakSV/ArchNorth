@@ -1,4 +1,4 @@
-# Contributing to TechTutor
+# Contributing to ArchNorth
 
 Thank you for your interest in contributing! This document explains how to contribute and the rules you must follow.
 

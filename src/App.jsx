@@ -11,6 +11,7 @@ const Tutorials = lazy(() => import('./pages/Tutorials'));
 const TutorialDetail = lazy(() => import('./pages/TutorialDetail'));
 const Notes = lazy(() => import('./pages/Notes'));
 const LicenseReport = lazy(() => import('./pages/LicenseReport'));
+const ProgressTracker = lazy(() => import('./pages/ProgressTracker'));
 
 function PageLoader() {
   return (
@@ -23,7 +24,7 @@ function PageLoader() {
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter basename="/zero-to-architect">
+      <BrowserRouter basename="/ArchNorth">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/tutorials" element={<Tutorials />} />
               <Route path="/tutorials/:id" element={<TutorialDetail />} />
               <Route path="/notes" element={<Notes />} />
+              <Route path="/progress" element={<ProgressTracker />} />
               <Route path="/license" element={<LicenseReport />} />
             </Route>
           </Routes>

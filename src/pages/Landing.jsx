@@ -34,13 +34,13 @@ export default function Landing() {
             background: 'linear-gradient(135deg, var(--accent) 0%, var(--text-primary) 100%)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
           }}>
-            TechTutor
+            ArchNorth
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 1, maxWidth: 600, mx: 'auto', lineHeight: 1.8 }}>
-            Learn tech the way it should be — through real scenarios, not textbook definitions.
+            Your true north for system design, Java, and software architecture.
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 4, maxWidth: 500, mx: 'auto' }}>
-            System design, Java internals, microservices, concurrency — all explained so simply that anyone can understand.
+            Real scenarios, interactive simulations, and interview prep — not textbook definitions.
           </Typography>
 
           <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1, mb: 4, maxWidth: 500, mx: 'auto' }}>
@@ -86,7 +86,7 @@ export default function Landing() {
       </Box>
 
       <Box sx={{ textAlign: 'center', py: 3 }}>
-        <Typography variant="caption" color="text.secondary">Built for learning, not for show ✨</Typography>
+        <Typography variant="caption" color="text.secondary">ArchNorth — Find your direction in tech ✨</Typography>
       </Box>
     </Box>
   );

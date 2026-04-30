@@ -92,13 +92,13 @@ export default function LicenseReport() {
         <li><Typography variant="body2">All 14 direct dependencies use the <strong>MIT License</strong> — the most permissive open-source license with zero copyleft restrictions.</Typography></li>
         <li><Typography variant="body2">No <strong>GPL, AGPL, LGPL, or copyleft</strong> licenses in the dependency tree.</Typography></li>
         <li><Typography variant="body2">Tutorial content references third-party technologies (Redis, Kafka, Spring, AWS, etc.) for <strong>educational purposes only</strong>. All trademarks belong to their respective owners.</Typography></li>
-        <li><Typography variant="body2">"TechTutor" / "Zero to Architect" branding is <strong>not covered</strong> by the MIT or CC license.</Typography></li>
+        <li><Typography variant="body2">"ArchNorth" branding is <strong>not covered</strong> by the MIT or CC license.</Typography></li>
         <li><Typography variant="body2">This project is provided <strong>"AS IS"</strong> without warranty of any kind. See <code>LICENSE</code> for full terms.</Typography></li>
       </Box>
 
       <Paper variant="outlined" sx={{ p: 2, mt: 3, bgcolor: 'action.hover' }}>
         <Typography variant="body2" color="text.secondary" textAlign="center">
-          Copyright © 2026 TechTutor Contributors — Code: MIT | Content: CC BY-NC-SA 4.0
+          Copyright © 2026 ArchNorth Contributors — Code: MIT | Content: CC BY-NC-SA 4.0
         </Typography>
       </Paper>
     </Box>

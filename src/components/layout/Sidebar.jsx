@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import {
   Dashboard, MenuBook, StickyNote2, Home, Gavel,
-  ExpandLess, ExpandMore, Circle,
+  ExpandLess, ExpandMore, Circle, TrackChanges,
 } from '@mui/icons-material';
 import tutorialRegistry, {
   getCategories, getSubcategories, getCategoryIcon, getTutorialById,
@@ -84,7 +84,7 @@ export default function Sidebar({ open, onClose }) {
       >
         <MenuBook sx={{ color: 'primary.main', fontSize: 28 }} />
         <Typography variant="h6" noWrap sx={{ fontWeight: 700, color: 'primary.main' }}>
-          TechTutor
+          ArchNorth
         </Typography>
       </Toolbar>
       <Divider />
@@ -228,6 +228,16 @@ export default function Sidebar({ open, onClose }) {
           >
             <ListItemIcon sx={{ minWidth: 36, color: 'inherit' }}><StickyNote2 /></ListItemIcon>
             <ListItemText primary="Notes" primaryTypographyProps={{ fontWeight: 500, fontSize: '0.9rem' }} />
+          </ListItemButton>
+
+          {/* Progress Tracker */}
+          <ListItemButton
+            selected={isPathActive('/progress')}
+            onClick={() => handleNav('/progress')}
+            sx={navItemSx(isPathActive('/progress'))}
+          >
+            <ListItemIcon sx={{ minWidth: 36, color: 'inherit' }}><TrackChanges /></ListItemIcon>
+            <ListItemText primary="8-Week Tracker" primaryTypographyProps={{ fontWeight: 500, fontSize: '0.9rem' }} />
           </ListItemButton>
 
           {/* License */}

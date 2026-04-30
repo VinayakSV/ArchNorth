@@ -1,11 +1,26 @@
 import { useState, useEffect } from 'react';
 import {
   Box, Typography, TextField, Button, IconButton, Paper, Grid, Dialog,
-  DialogTitle, DialogContent, DialogActions, Fab, Chip,
+  DialogTitle, DialogContent, DialogActions, Chip, Tooltip,
 } from '@mui/material';
-import { Add, Delete, Edit, NoteAdd } from '@mui/icons-material';
+import { Delete, Edit, NoteAdd, FileDownload } from '@mui/icons-material';
 
-const STORAGE_KEY = 'tech-tutorial-notes';
+const STORAGE_KEY = 'archnorth-notes';
+
+const exportAllAsMarkdown = (notes) => {
+  if (notes.length === 0) return;
+  const md = `# My Notes\n_Exported from ArchNorth on ${new Date().toLocaleDateString()}_\n\n---\n\n` +
+    notes.map((n) =>
+      `## ${n.title}${n.tag ? ` \`${n.tag}\`` : ''}\n_${new Date(n.updatedAt).toLocaleDateString()}_\n\n${n.content}`
+    ).join('\n\n---\n\n');
+  const blob = new Blob([md], { type: 'text/markdown; charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `archnorth-notes-${new Date().toISOString().split('T')[0]}.md`;
+  a.click();
+  URL.revokeObjectURL(url);
+};
 
 const loadNotes = () => {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
@@ -50,9 +65,18 @@ export default function Notes() {
           <Typography variant="h4" sx={{ mb: 0.5 }}>Notes</Typography>
           <Typography variant="body2" color="text.secondary">{notes.length} note{notes.length !== 1 && 's'}</Typography>
         </Box>
-        <Button variant="contained" startIcon={<NoteAdd />} onClick={() => setOpen(true)}>
-          New Note
-        </Button>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          {notes.length > 0 && (
+            <Tooltip title="Export all notes as Markdown">
+              <Button variant="outlined" startIcon={<FileDownload />} onClick={() => exportAllAsMarkdown(notes)} size="small">
+                Export
+              </Button>
+            </Tooltip>
+          )}
+          <Button variant="contained" startIcon={<NoteAdd />} onClick={() => setOpen(true)}>
+            New Note
+          </Button>
+        </Box>
       </Box>
 
       {notes.length === 0 ? (
