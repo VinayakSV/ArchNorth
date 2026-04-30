@@ -205,12 +205,18 @@ export default function TutorialDetail() {
     }
 
     setLoading(true);
-    mdModules[key]().then((md) => {
-      if (thisLoad !== loadIdRef.current) return;
-      mdCache[key] = md;
-      setContent(md);
-      setLoading(false);
-    });
+    mdModules[key]()
+      .then((md) => {
+        if (thisLoad !== loadIdRef.current) return;
+        mdCache[key] = md;
+        setContent(md);
+        setLoading(false);
+      })
+      .catch(() => {
+        if (thisLoad !== loadIdRef.current) return;
+        setContent('# 🚧 Coming Soon\n\nThis tutorial is under construction. Check back soon!');
+        setLoading(false);
+      });
   }, [id]);
 
   useEffect(() => {

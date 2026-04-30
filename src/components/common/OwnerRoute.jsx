@@ -7,13 +7,21 @@ import { Google, Lock } from '@mui/icons-material';
 const OWNER_EMAIL = 'vinfin1323@gmail.com';
 
 export default function OwnerRoute({ children }) {
-  const [user, setUser] = useState(undefined); // undefined = still loading
+  const [user, setUser] = useState(undefined); // undefined = auth not resolved yet
 
   useEffect(() => {
     return onAuthStateChanged(auth, (u) => setUser(u ?? null));
   }, []);
 
-  if (user === undefined) {
+  // Sign out wrong accounts from an effect — never directly in render
+  useEffect(() => {
+    if (user && user.email && user.email !== OWNER_EMAIL) {
+      signOutUser();
+    }
+  }, [user]);
+
+  // Auth not resolved yet, or signed in but Google profile still loading (email briefly null)
+  if (user === undefined || (user !== null && !user.email)) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
         <CircularProgress size={32} />
@@ -21,7 +29,8 @@ export default function OwnerRoute({ children }) {
     );
   }
 
-  if (!user) {
+  // Not signed in
+  if (user === null) {
     return (
       <Box sx={{
         minHeight: '80vh', display: 'flex', flexDirection: 'column',
@@ -47,8 +56,8 @@ export default function OwnerRoute({ children }) {
     );
   }
 
+  // Wrong account — signOutUser() handled by the effect above, not here
   if (user.email !== OWNER_EMAIL) {
-    signOutUser();
     return (
       <Box sx={{
         minHeight: '80vh', display: 'flex', flexDirection: 'column',
