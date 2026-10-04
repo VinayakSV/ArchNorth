@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Private notes (interview prep, session context) — keep out of the public repo
+# Private notes — kept out of the public repo
 docs/

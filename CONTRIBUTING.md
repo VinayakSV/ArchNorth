@@ -29,7 +29,7 @@ All PRs require review and approval from a maintainer before merging.
 
 ### Code Contributions
 - Follow the existing code style (React functional components, MUI, hooks)
-- No new dependencies without discussion in an issue first
+- No new dependencies without asking first (email `archnorth.learn@gmail.com`). Shipped dependencies must use a permissive license; `npm run build` fails otherwise
 - All code must pass `npm run build` without errors
 - Do not commit `.env` files, secrets, API keys, or credentials
 
@@ -71,4 +71,4 @@ Violations may result in your contributions being rejected and access being revo
 
 ## Questions?
 
-Open an issue with the `question` label if you're unsure about anything before contributing.
+Email `archnorth.learn@gmail.com` (subject starting with `[ArchNorth Feedback]`) if you're unsure about anything before contributing.

@@ -19,9 +19,9 @@ There is no test suite/runner configured in this repo. Verify changes with `npm 
 
 Deployment is automatic via `.github/workflows/deploy.yml` on every push to `master` (not `main`) — builds with Node 22 and deploys `dist/` to GitHub Pages.
 
-The GitHub repo is public. Keep personal or employer-identifying material (interview prep notes, salary, internal product or customer names) out of it: `docs/` is git-ignored for that reason, and the owner's private notes live outside the repo. Tutorial content uses generic examples instead of real employer details.
+The GitHub repo is public. Keep personal details and anything from real employers or customers out of tracked files: `docs/` is git-ignored for private notes, which live outside the repo. Tutorial content uses generic examples.
 
-- **Commits:** this repo commits as `VinayakSV <archnorth.learn@gmail.com>` (set in the repo-local git config). Never commit with a work email.
+- **Commits:** this repo commits as `VinayakSV <archnorth.learn@gmail.com>` (set in the repo-local git config). Commit only with this identity.
 - **Study plan:** the owner's personal study plan is not in the code. `ProgressTracker.jsx` ships a neutral default, and a personal plan is imported from a JSON file into localStorage.
 - **Feedback:** feedback is email-only, with no backend. The address and subject prefix live in `src/lib/feedback.js`. Links appear on the `/feedback` page (in the sidebar) and at the end of every tutorial.
   - `mailto:` alone often fails on Windows desktops (no configured mail app, or Firefox set to "always ask"). So `FeedbackActions` opens a menu: Gmail web compose, Outlook.com web compose, the visitor's mail app (`mailto:` with CRLF line breaks), and "copy message text".
@@ -80,16 +80,18 @@ The engine file is imported locally (`sql.js/dist/sql-wasm-browser.wasm?url`), n
 
 `src/lib/firebase.js` configures Firebase Auth (Google sign-in only). `OwnerRoute.jsx` gates a route to a single owner by Firebase Auth user ID (`OWNER_UID`). The UID is not secret and reveals no email; never put the owner's email back in the code. Any other authenticated account is force-signed-out via an effect (never during render). Currently only `/progress` (`ProgressTracker.jsx`) is owner-gated. This is single-user auth, not a general auth system — don't generalize it without being asked.
 
+Firebase must load only on that page: `src/pages/PrivateProgress.jsx` (lazy, in `routes/pages.js`) wraps `ProgressTracker` in `OwnerRoute`, so the Firebase SDK sits in that page's chunk. Never import `OwnerRoute` or `lib/firebase` from an eagerly loaded module (App, Layout, Sidebar): Firebase would then start for every visitor and create IndexedDB databases on their device, which the privacy notice says doesn't happen.
+
 ### Routing & app shell
 
-`App.jsx` defines all routes under `BrowserRouter basename="/ArchNorth"` matching Vite's `base: '/ArchNorth/'` in `vite.config.js`. `/` is the unauthenticated `Landing` page outside the main `Layout`; everything else (`/home`, `/dashboard`, `/tutorials`, `/tutorials/:id`, `/notes`, `/progress`, `/license`) is nested under `Layout` (header/sidebar chrome).
+`App.jsx` defines all routes under `BrowserRouter basename="/ArchNorth"` matching Vite's `base: '/ArchNorth/'` in `vite.config.js`. `/` is the unauthenticated `Landing` page outside the main `Layout`; everything else (`/home`, `/dashboard`, `/tutorials`, `/tutorials/:id`, `/notes`, `/progress`, `/license`, `/feedback`) is nested under `Layout` (header/sidebar chrome).
 
 Pages are code-split with `lazyWithPreload` (`src/lib/lazyWithPreload.js`), declared in `src/routes/pages.js`; each page has a `preload()`. Landing preloads Home on idle and on hover/touch of "Enter"; `Layout` preloads the likely-next pages on idle (skipped with Save-Data or 2G). `Layout` wraps `<Outlet />` in its own `Suspense`, so header and sidebar stay on screen while a page loads.
 
 Loading UI is one consistent design, so use it instead of raw MUI spinners:
 - `AppLoader` (`components/common/AppLoader.jsx`): the compass loader, with variants `fullscreen`, `page`, `section`, and `inline`. It fades in after 150 ms, so fast loads don't flash.
 - `RouteProgressBar`: the thin top bar. It shows while anything registered with `trackLoading(promise)` is pending; page chunks register automatically, and TutorialDetail registers markdown loads. React Router runs navigations as transitions and keeps the old page on screen, so the bar is the only immediate feedback on click.
-- `index.html`: an inline boot loader (the same compass) inside `#root`, plus an early script that applies the saved theme before first paint. Google Fonts load non-blocking.
+- `index.html`: an inline boot loader (the same compass) inside `#root`, plus an early script that applies the saved theme before first paint.
 
 Small spinners inside buttons (e.g. the SQL "Run" button) stay as `CircularProgress`.
 
@@ -105,8 +107,14 @@ No backend/database — all user state (per-tutorial notes, global notes, progre
 
 ### Build config specifics
 
-`vite.config.js` sets manual chunk splitting (`vendor-react`, `vendor-mui`, `vendor-markdown`, `vendor-mermaid`), excludes `sql.js` from dep pre-bundling (it's WASM), and includes `assetsInclude: ['**/*.md']`. PWA is configured via `vite-plugin-pwa` with `autoUpdate` registration and Google Fonts runtime caching — `base`/`scope`/`start_url` must all stay in sync at `/ArchNorth/` when changing the deploy path.
+`vite.config.js` sets manual chunk splitting (`vendor-react`, `vendor-mui`, `vendor-markdown`, `vendor-mermaid`), excludes `sql.js` from dep pre-bundling (it's WASM), and includes `assetsInclude: ['**/*.md']`. PWA is configured via `vite-plugin-pwa` with `autoUpdate` registration, runtime caching for the WASM engine and font files, and `navigateFallbackDenylist: [/\.txt$/]` so `third-party-licenses.txt` opens as a file instead of the app shell — `base`/`scope`/`start_url` must all stay in sync at `/ArchNorth/` when changing the deploy path. The favicon is `public/pwa-icon.svg`.
+
+Fonts are self-hosted: `main.jsx` imports `@fontsource-variable/inter` and `@fontsource-variable/fira-code`, which register the families **"Inter Variable"** and **"Fira Code Variable"**. Use the `FONT_SANS` / `FONT_MONO` stacks exported from `src/theme/theme.js` (the oneDark/oneLight code themes name plain "Fira Code", so `MarkdownViewer` overrides their font). Don't add Google Fonts or any other third-party request back: the privacy notice says pages contact no font service.
 
 ## Licensing split (relevant when adding/editing files)
 
 Code (everything outside `src/content/`) is MIT. Everything under `src/content/` (tutorial markdown, diagrams, embedded examples) is CC BY-NC-SA 4.0, per README.md and `LICENSE-CONTENT`.
+
+Third-party notices are generated, not hand-maintained: the Vite plugin `scripts/third-party-notices.js` writes `dist/third-party-licenses.txt` from the modules actually in the bundle, plus the Workbox packages copied into the service worker (`SERVICE_WORKER_PACKAGES`). It **fails the build** when a shipped package's license isn't in its permissive `ALLOWED` set; review the license before adding anything there, and record packages with no `license` field in `LICENSE_OVERRIDES`. Packages that ship no license file (the Firebase SDK) get their copyright lines from the bundled source headers, and their full license text from `scripts/license-texts/<SPDX id>.txt`.
+
+The License page (`src/pages/LicenseReport.jsx`, route `/license`) is the public legal and privacy notice. Keep it, the README's Privacy and License & Legal sections, and the actual behavior in sync. Any change to what the site stores on a device or which third parties it contacts (analytics, fonts, sign-in, hosting) needs a matching update there, plus a new "Last reviewed" date.

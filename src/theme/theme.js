@@ -1,5 +1,9 @@
 import { createTheme } from '@mui/material/styles';
 
+// The bundled variable fonts (imported in main.jsx) register as "Inter Variable" and "Fira Code Variable".
+export const FONT_SANS = "'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+export const FONT_MONO = "'Fira Code Variable', 'Fira Code', 'Cascadia Code', Menlo, Consolas, 'DejaVu Sans Mono', monospace";
+
 const getTheme = (mode) =>
   createTheme({
     palette: {
@@ -19,7 +23,7 @@ const getTheme = (mode) =>
           }),
     },
     typography: {
-      fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      fontFamily: FONT_SANS,
       h4: { fontWeight: 700, letterSpacing: '-0.02em' },
       h5: { fontWeight: 600, letterSpacing: '-0.01em' },
       h6: { fontWeight: 600 },

@@ -8,7 +8,7 @@ export const Tutorials = lazyWithPreload(() => import('../pages/Tutorials'));
 export const TutorialDetail = lazyWithPreload(() => import('../pages/TutorialDetail'));
 export const Notes = lazyWithPreload(() => import('../pages/Notes'));
 export const LicenseReport = lazyWithPreload(() => import('../pages/LicenseReport'));
-export const ProgressTracker = lazyWithPreload(() => import('../pages/ProgressTracker'));
+export const PrivateProgress = lazyWithPreload(() => import('../pages/PrivateProgress'));
 export const Feedback = lazyWithPreload(() => import('../pages/Feedback'));
 
 /** The pages a visitor most often opens next once inside the app. */

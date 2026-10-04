@@ -1,5 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+// Fonts ship with the site, so visitors' browsers never contact Google Fonts.
+import '@fontsource-variable/inter';
+import '@fontsource-variable/fira-code';
 import './styles/global.scss';
 import App from './App';
 import { reloadForNewVersion } from './lib/staleVersion';

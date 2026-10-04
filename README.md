@@ -544,11 +544,13 @@ ArchNorth was designed, curated, and directed by **[VinayakSV](https://github.co
 
 ## 🔒 Privacy
 
-- Notes and progress are stored only in the visitor's browser (localStorage). Nothing is sent to a server.
+- Notes and the theme choice are stored only in the visitor's browser (localStorage). Nothing is sent to a server.
+- A service worker caches the site's files for offline use. It stores no personal data.
+- Fonts (Inter, Fira Code) are bundled with the site, so pages never contact Google Fonts.
 - Google Analytics 4 runs in consent mode with storage denied: no analytics or advertising cookies, but Google still receives cookieless page-view pings (IP address, browser details).
-- Fonts load from Google Fonts.
-- Google sign-in (Firebase) is used only for the owner's private page; visitors never sign in.
-- Feedback is sent by email (`archnorth.learn@gmail.com`) from the visitor's own mail app; addresses and messages are used only to reply and improve ArchNorth.
+- GitHub Pages hosts the site, and GitHub logs visitor IP addresses for security.
+- Google sign-in (Firebase) is used only for the owner's private page, and Firebase loads only on that page; visitors never sign in.
+- Feedback is sent by email (`archnorth.learn@gmail.com`); addresses and messages are used only to reply and improve ArchNorth.
 
 The same notice appears on the in-app **License** page.
 
@@ -599,7 +601,17 @@ Every push to `master` builds and deploys the live site through `.github/workflo
 
 ### Third-Party Content
 
-This project uses open-source libraries listed in `package.json`. Each library retains its own license. Tutorials may reference third-party technologies (Redis, Kafka, Spring, AWS, etc.) — all trademarks belong to their respective owners and are used here for educational purposes only. Case studies named after real products (Netflix, Uber, WhatsApp, and others) describe publicly known system designs; ArchNorth is not affiliated with or endorsed by any of these companies.
+This project uses open-source libraries listed in `package.json`. Each library retains its own license. Every production build writes `third-party-licenses.txt` (served at `/ArchNorth/third-party-licenses.txt`) with the version, copyright notice, and full license text of each package the site ships, including the Workbox service-worker code and the bundled Inter and Fira Code fonts (SIL Open Font License 1.1). The build fails if a shipped package's license isn't on the permissive allowlist in `scripts/third-party-notices.js`.
+
+Tutorials may reference third-party technologies (Redis, Kafka, Spring, AWS, etc.) — all trademarks belong to their respective owners and are used here for educational purposes only. Case studies named after real products (Netflix, Uber, WhatsApp, and others) are simplified descriptions of publicly known system designs, not official or insider accounts; ArchNorth is not affiliated with or endorsed by any of these companies.
+
+### Fictional Examples
+
+ShopNorth, the company in the ShopNorth Journey, is fictional, as are the other example companies, people, and sample data (including the SQL playground's airline data). Any resemblance to real companies or people is coincidental. Interview questions are original practice questions, not questions taken from any company's interviews.
+
+### Rights Concerns
+
+If you believe something in ArchNorth infringes your copyright or other rights, email `archnorth.learn@gmail.com` with the details. It will be reviewed promptly, and corrected or removed.
 
 ### Disclaimer
 

@@ -28,6 +28,7 @@ import properties from 'react-syntax-highlighter/dist/esm/languages/prism/proper
 import { Box, Typography } from '@mui/material';
 import MermaidDiagram from './MermaidDiagram';
 import useThemeMode from '../../hooks/useThemeMode';
+import { FONT_MONO } from '../../theme/theme';
 
 // Only these grammars are bundled; add one here when content uses a new fence language.
 Object.entries({
@@ -57,13 +58,13 @@ function themeToTokenSx(theme) {
 const CODE_THEMES = {
   dark: {
     tokens: themeToTokenSx(oneDark),
-    pre: { ...oneDark['pre[class*="language-"]'], margin: 0, borderRadius: 0, fontSize: '0.8rem' },
-    code: oneDark['code[class*="language-"]'],
+    pre: { ...oneDark['pre[class*="language-"]'], margin: 0, borderRadius: 0, fontSize: '0.8rem', fontFamily: FONT_MONO },
+    code: { ...oneDark['code[class*="language-"]'], fontFamily: FONT_MONO },
   },
   light: {
     tokens: themeToTokenSx(oneLight),
-    pre: { ...oneLight['pre[class*="language-"]'], margin: 0, borderRadius: 0, fontSize: '0.8rem' },
-    code: oneLight['code[class*="language-"]'],
+    pre: { ...oneLight['pre[class*="language-"]'], margin: 0, borderRadius: 0, fontSize: '0.8rem', fontFamily: FONT_MONO },
+    code: { ...oneLight['code[class*="language-"]'], fontFamily: FONT_MONO },
   },
 };
 
@@ -84,7 +85,7 @@ const markdownSx = {
   '& th': { bgcolor: 'action.hover', fontWeight: 600 },
   '& code:not(pre code)': {
     bgcolor: 'var(--code-bg)', px: 0.8, py: 0.2, borderRadius: 1,
-    fontSize: '0.875em', fontFamily: "'Fira Code', monospace",
+    fontSize: '0.875em', fontFamily: FONT_MONO,
   },
   '& hr': { border: 'none', borderTop: '1px solid', borderColor: 'divider', my: 3 },
   '& img': { maxWidth: '100%', borderRadius: 2 },

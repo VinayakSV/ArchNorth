@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import thirdPartyNotices from './scripts/third-party-notices.js';
 
 export default defineConfig({
   define: {
@@ -39,26 +40,21 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            // Bundled fonts: browsers fetch only the character subsets a page uses, then reuse them
+            urlPattern: /\.woff2$/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'google-fonts-cache',
-              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
-              cacheableResponse: { statuses: [0, 200] },
-            },
-          },
-          {
-            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'gstatic-fonts-cache',
-              expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheName: 'font-cache',
+              expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
         ],
+        // Plain files such as third-party-licenses.txt must open as files, not as the app's index.html
+        navigateFallbackDenylist: [/\.txt$/i],
       },
     }),
+    thirdPartyNotices(),
   ],
   base: '/ArchNorth/',
   assetsInclude: ['**/*.md'],

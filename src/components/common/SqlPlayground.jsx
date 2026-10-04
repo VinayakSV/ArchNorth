@@ -10,6 +10,7 @@ import {
 } from '@mui/icons-material';
 import sqlWasmUrl from 'sql.js/dist/sql-wasm-browser.wasm?url';
 import AppLoader from './AppLoader';
+import { FONT_MONO } from '../../theme/theme';
 
 // ── Sample queries shown in the quick-pick dropdown ──────────────────────────
 const SAMPLE_QUERIES = [
@@ -548,7 +549,7 @@ const SqlPlayground = memo(function SqlPlayground() {
             placeholder="Write your SQL query here…"
             style={{
               width: '100%', boxSizing: 'border-box',
-              fontFamily: '"Fira Code","Cascadia Code","Consolas",monospace',
+              fontFamily: FONT_MONO,
               fontSize: 13, lineHeight: 1.6,
               padding: '10px 12px', borderRadius: 6,
               border: `1px solid ${borderColor}`,

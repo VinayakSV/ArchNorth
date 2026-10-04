@@ -2,13 +2,12 @@ import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import ThemeProvider from './context/ThemeProvider';
 import Layout from './components/layout/Layout';
-import OwnerRoute from './components/common/OwnerRoute';
 import AppLoader from './components/common/AppLoader';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import RouteProgressBar from './components/common/RouteProgressBar';
 import NotFound from './pages/NotFound';
 import {
-  Landing, Home, Dashboard, Tutorials, TutorialDetail, Notes, LicenseReport, ProgressTracker, Feedback,
+  Landing, Home, Dashboard, Tutorials, TutorialDetail, Notes, LicenseReport, PrivateProgress, Feedback,
 } from './routes/pages';
 
 function AppRoutes() {
@@ -26,7 +25,7 @@ function AppRoutes() {
             <Route path="/tutorials" element={<Tutorials />} />
             <Route path="/tutorials/:id" element={<TutorialDetail />} />
             <Route path="/notes" element={<Notes />} />
-            <Route path="/progress" element={<OwnerRoute><ProgressTracker /></OwnerRoute>} />
+            <Route path="/progress" element={<PrivateProgress />} />
             <Route path="/license" element={<LicenseReport />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="*" element={<NotFound />} />
