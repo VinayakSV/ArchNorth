@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="ArchNorth — Interactive learning hub for system design, Java internals, microservices, and software architecture" />
+    <meta name="theme-color" content="#1a1b1e" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" type="image/svg+xml" href="/ArchNorth/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts load without blocking the first paint; text shows in a system font until Inter arrives -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" /></noscript>
+    <title>ArchNorth</title>
+
+    <!-- Apply the saved theme before the first paint (React applies it again once it starts) -->
+    <script>
+      (function () {
+        var theme = 'dark';
+        try { theme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark'; } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+    <!-- Boot loader: shown until React renders the app (same compass as src/components/common/AppLoader.jsx) -->
+    <style>
+      .boot-loader { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; gap: 14px; background: #1a1b1e; color: #7fbfae;
+        font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; }
+      [data-theme='light'] .boot-loader { background: #f5f0eb; color: #4a7c6f; }
+      .boot-loader p { margin: 0; font-size: 14px; color: #9e9a93; }
+      [data-theme='light'] .boot-loader p { color: #5c574f; }
+      .boot-loader .an-ring { transform-origin: 24px 24px; animation: boot-spin 1.1s linear infinite; }
+      .boot-loader .an-needle { transform-origin: 24px 24px; animation: boot-seek 1.6s ease-in-out infinite; }
+      @keyframes boot-spin { to { transform: rotate(360deg); } }
+      @keyframes boot-seek { 0%, 100% { transform: rotate(-35deg); } 45% { transform: rotate(18deg); } 70% { transform: rotate(-6deg); } }
+      @media (prefers-reduced-motion: reduce) { .boot-loader .an-ring, .boot-loader .an-needle { animation: none; } }
+    </style>
+
+    <!-- GitHub Pages SPA: decodes the ?/ redirect from 404.html back into a real URL before React Router loads -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+    <!-- Google Analytics 4 with Consent Mode V2 — cookie-less by default -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      // Deny all storage by default, so no analytics/ad cookies are set. GA still receives cookieless
+      // pings (IP address, user agent), which is disclosed in the Privacy section of /license.
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LE4FL3P2EB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LE4FL3P2EB', { anonymize_ip: true });
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-loader" role="status" aria-live="polite">
+        <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-opacity="0.2" stroke-width="3" />
+          <circle class="an-ring" cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="30 102" />
+          <g class="an-needle">
+            <polygon points="24,8 28.5,24 19.5,24" fill="currentColor" />
+            <polygon points="24,40 28.5,24 19.5,24" fill="currentColor" fill-opacity="0.3" />
+          </g>
+          <circle cx="24" cy="24" r="2.6" fill="currentColor" />
+        </svg>
+        <p>Loading ArchNorth…</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

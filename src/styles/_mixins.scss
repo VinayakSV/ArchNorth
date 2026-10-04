@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+@mixin respond-to($bp) {
+  @if $bp == mobile { @media (max-width: $bp-mobile) { @content; } }
+  @else if $bp == tablet { @media (max-width: $bp-tablet) { @content; } }
+  @else if $bp == laptop { @media (max-width: $bp-laptop) { @content; } }
+  @else if $bp == desktop { @media (max-width: $bp-desktop) { @content; } }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin card-base {
+  border-radius: $radius-md;
+  padding: $space-lg;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+  box-sizing: border-box;
+}
+
+@mixin hover-lift {
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px var(--card-shadow);
+  }
+}
+
+@mixin fade-in($duration: 0.4s, $delay: 0s) {
+  animation: fadeIn $duration ease $delay both;
+}
+
+@mixin slide-up($duration: 0.4s, $delay: 0s) {
+  animation: slideUp $duration ease $delay both;
+}
+
+@mixin slide-in-left($duration: 0.3s) {
+  animation: slideInLeft $duration ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

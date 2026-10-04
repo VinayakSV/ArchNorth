@@ -1,0 +1,46 @@
+// Eye-friendly color palette (medical-grade contrast)
+// Light theme: warm off-white bg, soft dark text — reduces blue light strain
+// Dark theme: deep warm gray bg, soft warm text — avoids pure black/white
+
+// Light theme
+$light-bg: #f5f0eb;
+$light-bg-paper: #faf7f3;
+$light-text-primary: #2d2a26;
+$light-text-secondary: #5c574f;
+$light-accent: #4a7c6f;
+$light-accent-hover: #3d6a5e;
+$light-border: #ddd5cc;
+$light-card-shadow: rgba(45, 42, 38, 0.08);
+
+// Dark theme
+$dark-bg: #1a1b1e;
+$dark-bg-paper: #242529;
+$dark-text-primary: #e0dcd5;
+$dark-text-secondary: #9e9a93;
+$dark-accent: #7fbfae;
+$dark-accent-hover: #6aab99;
+$dark-border: #35363a;
+$dark-card-shadow: rgba(0, 0, 0, 0.3);
+
+// Shared
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$sidebar-width: 260px;
+$sidebar-collapsed: 64px;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1280px;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-xxl: 48px;
