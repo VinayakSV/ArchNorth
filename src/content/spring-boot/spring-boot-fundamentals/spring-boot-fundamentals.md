@@ -1,5 +1,13 @@
 # Spring Boot Fundamentals — How Boot Bootstraps Itself (and How to Explain It)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > You've shipped Boot apps for years; this page is about the *mechanism*, which is what senior interviews probe.
 
 ---

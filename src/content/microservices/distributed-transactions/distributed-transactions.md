@@ -1,5 +1,13 @@
 # Distributed Transactions — 2PC, Sagas, Outbox, and Designing for Failure Between Services
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Microservices · Data Management** — In a monolith, one `@Transactional` keeps an order, a payment, and an inventory update consistent. Split them into three services with three databases, and that guarantee is gone. This page shows what replaces it — and the failure scenarios that separate a working saga from a whiteboard diagram.
 
 ---

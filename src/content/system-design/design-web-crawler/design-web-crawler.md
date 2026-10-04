@@ -1,5 +1,13 @@
 # Design Web Crawler — The Library Cataloger Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · Extra case study for [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Library Cataloger Analogy
 
 Imagine you're hired to catalog every book in every library in the world. You start at one library, note every book, then follow references in those books to find other libraries. You visit those libraries, catalog their books, follow more references — and so on. But you must be polite (don't overwhelm any library), avoid revisiting libraries you've already cataloged, and prioritize important libraries first.

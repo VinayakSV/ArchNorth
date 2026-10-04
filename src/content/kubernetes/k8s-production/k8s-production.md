@@ -1,5 +1,13 @@
 # Kubernetes in Production — Resources, Scaling, Security, GitOps & Troubleshooting
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Kubernetes · Production** — Getting a pod running is day 1. This page is day 2: keeping dozens of services reliable, secure, affordable, and debuggable when you're on call.
 
 ---

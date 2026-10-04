@@ -1,5 +1,13 @@
 # ConcurrentHashMap Deep Dive
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Testing — code quality & review** · ShopNorth uses this in [Chapter 9 · Code Quality — SonarQube & Coverity](/tutorials/journey-09-code-quality)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why Not Just Use synchronized HashMap?
 
 Imagine a **library** again. A `synchronized HashMap` is like having **one door** — only one person can enter or leave at a time. Even if 100 people just want to *read* different books, they all queue at the same door.

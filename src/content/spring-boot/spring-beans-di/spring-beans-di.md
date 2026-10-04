@@ -1,5 +1,13 @@
 # Beans & Dependency Injection — The Spring Container From the Inside
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > Every Spring question ultimately comes back to "what does the container do with your objects?". This page answers that end to end.
 
 ---

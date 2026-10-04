@@ -1,5 +1,13 @@
 # Design Netflix — The Movie Theater Chain Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · Extra case study for [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Movie Theater Chain Analogy
 
 Imagine a movie theater chain with 200 million members. Every member wants to watch a different movie, at any time, on any device, with zero buffering. You can't have one giant theater — you need thousands of screens worldwide, each pre-loaded with popular movies, adapting quality based on the viewer's seat (device/bandwidth). That's Netflix — a global video streaming platform.

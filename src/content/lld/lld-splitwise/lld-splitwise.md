@@ -1,5 +1,13 @@
 # Design Splitwise — Expense Sharing Done Right (Money, Rounding, Concurrency, Debt Simplification)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · Extra case study for [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Low-Level Design · Classic LLD** — Splitwise looks like a toy problem until you handle real money: ₹100 split three ways, two people adding expenses to the same group at the same second, a settlement that must never be applied twice. This version is interview-ready *and* production-shaped.
 
 ---

@@ -1,5 +1,13 @@
 # Design Facebook Newsfeed — The Newspaper Editor Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · Extra case study for [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Newspaper Editor Analogy
 
 Imagine a newspaper editor who creates a personalized edition for each of 3 billion readers. Each edition contains stories from the reader's friends, pages they follow, and groups they're in — ranked by relevance, not just time. Some stories are text, some photos, some videos. And the edition updates in real-time as new stories come in. That's Facebook's Newsfeed.

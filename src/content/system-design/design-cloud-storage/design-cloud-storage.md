@@ -1,5 +1,13 @@
 # Design Google Drive / Dropbox — The Shared Locker System
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · Extra case study for [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Shared Locker Analogy
 
 Imagine a locker system where you put a document in your locker, and instantly your friend across the city sees the same document in their locker. If you both edit it at the same time, the system merges your changes without losing either. If the locker building burns down, your documents are safe because copies exist in three other buildings. That's cloud file storage.

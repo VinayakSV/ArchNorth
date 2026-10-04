@@ -1,5 +1,13 @@
 # BFS & DFS — Traversing Trees and Graphs Without Getting Lost
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > Almost every tree or graph question is BFS or DFS plus one extra idea. Learn the two templates cold and the rest is variation. All code is Java.
 
 ---

@@ -1,5 +1,13 @@
 # AI in System Design — When, Where, and How
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Decision: Do You Even Need AI?
 
 Before adding AI to your system, ask:

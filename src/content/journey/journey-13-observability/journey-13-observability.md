@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 13 of 15 · Phase: **Operate & Evolve**
+🛒 **The ShopNorth Journey** · Chapter 13 of 15 · Phase: **Operate & Evolve** · SDLC stage: **Operations — monitoring**
 
 **Previously:** ShopNorth runs on Kubernetes with honest probes, autoscaling, graceful deploys, and a canary Rollout waiting for a health check called `canary-health` ([Chapter 12](/tutorials/journey-12-kubernetes)).
 
@@ -259,6 +259,21 @@ A stricter version filters by the canary's `version` tag and compares it with th
 
 Observability can get expensive fast. ShopNorth's habits: exclude health-check and probe logs at the agent; keep `DEBUG` logs out of production; index only the logs people search and archive the rest to S3; sample traces for high-volume, low-value endpoints while keeping 100% of errors; review custom metrics monthly for cardinality.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — CloudWatch Behind Datadog
+
+Datadog is where the team looks, but AWS's own monitoring still has four jobs:
+
+- **AWS metrics** for RDS, MSK, ElastiCache, SQS, the ALB, and Lambda flow from CloudWatch into Datadog through a **Metric Stream**; Lambda logs are forwarded from CloudWatch Logs.
+- **A safety net:** a few CloudWatch alarms — API error rate, p99 latency, healthy hosts — page through SNS and PagerDuty even if Datadog itself is down.
+- **Audit:** CloudTrail answers "who changed what" during incidents, next to the GitOps history.
+- **Cost:** retention on every CloudWatch log group, and AWS Budgets alerts on every account.
+
+The alarm definitions are in [CloudWatch & CloudTrail](/tutorials/aws-cloudwatch).
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -283,6 +298,7 @@ Observability can get expensive fast. ShopNorth's habits: exclude health-check a
 | [Apache Kafka Deep Dive](/tutorials/kafka-deep-dive) | Consumer lag and why it matters | Lag monitors |
 | [Distributed Transactions](/tutorials/distributed-transactions) | Sagas | Tracing the checkout saga end to end |
 | [AI in Production — LLMOps](/tutorials/ai-production-llmops) | Monitoring AI features | The same ideas applied to Chapter 15's AI features |
+| [CloudWatch & CloudTrail](/tutorials/aws-cloudwatch) | AWS metrics, alarms, logs, audit | The Datadog feed and the independent safety-net alarms |
 
 ## 📚 Extra Case Studies
 

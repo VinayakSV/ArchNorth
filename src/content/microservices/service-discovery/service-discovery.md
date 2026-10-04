@@ -1,5 +1,13 @@
 # Service Discovery & Configuration
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Problem
 
 In a monolith, everything is at `localhost`. In microservices, services run on different machines, ports change, instances scale up/down. How does Service A find Service B?

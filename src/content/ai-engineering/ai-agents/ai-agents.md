@@ -1,5 +1,13 @@
 # AI Agents — Tools, Loops, Guardrails, and When NOT to Build One
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Agents & MCP** — "Agent" is the most overused word in AI. This page gives you a precise definition, the handful of patterns that actually ship, the guardrails that keep them safe, and a checklist for deciding whether you need an agent at all (often you don't).
 
 ---

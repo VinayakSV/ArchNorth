@@ -1,5 +1,13 @@
 # Strings — Pool, Builder, Buffer, and the Traps Interviewers Love
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Testing — code quality & review** · ShopNorth uses this in [Chapter 9 · Code Quality — SonarQube & Coverity](/tutorials/journey-09-code-quality)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > Strings are the most-used type in any Java service and the most common source of "what does this print?" questions.
 
 ---

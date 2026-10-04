@@ -1,5 +1,13 @@
 # equals(), hashCode() & Immutability — The Contract That Keeps HashMap Honest
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · ShopNorth uses this in [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > This topic shows up in nearly every Java interview, usually disguised as a "why is my HashMap returning null?" bug.
 
 ---

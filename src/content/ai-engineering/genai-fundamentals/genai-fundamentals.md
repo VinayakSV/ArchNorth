@@ -1,5 +1,13 @@
 # Gen AI Fundamentals — How LLMs Work (the Builder's Mental Model)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Foundations** — You don't need linear algebra to build great AI features. You do need an accurate picture of what happens between "send prompt" and "get text back" — because every cost, latency, and quality problem you'll debug later traces back to it.
 
 ---

@@ -1,5 +1,13 @@
 # Rate Limiter — Complete System Design
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Operations — release & incidents** · ShopNorth uses this in [Chapter 14 · Launch Day & Incidents](/tutorials/journey-14-launch-day)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## 1. Problem Statement
 
 Design a **rate limiter** that controls the rate of requests a client can send to an API. It:

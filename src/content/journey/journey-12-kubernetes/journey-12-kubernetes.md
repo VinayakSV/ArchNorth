@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 12 of 15 · Phase: **Ship**
+🛒 **The ShopNorth Journey** · Chapter 12 of 15 · Phase: **Ship** · SDLC stage: **Deployment — infrastructure & runtime**
 
 **Previously:** The CI/CD pipeline builds one image per commit, deploys it to staging through GitOps, runs smoke and regression tests, and promotes it to production after an approval ([Chapter 11](/tutorials/journey-11-cicd)).
 
@@ -191,7 +191,7 @@ metadata:
   name: order-service-config
 data:
   SPRING_PROFILES_ACTIVE: production
-  DB_URL: jdbc:postgresql://orders.cluster-xyz.ap-south-1.rds.amazonaws.com:5432/orders
+  DB_URL: jdbc:postgresql://orders-prod.c4example1xyz.ap-south-1.rds.amazonaws.com:5432/orders
   INVENTORY_URL: http://inventory-service
   SPRING_KAFKA_BOOTSTRAP_SERVERS: b-1.shopnorth.kafka.ap-south-1.amazonaws.com:9098
 ---
@@ -328,6 +328,23 @@ kubectl argo rollouts abort order-service -n shopnorth    # emergency stop of a 
 - **Admission policies (Kyverno):** pods must run as non-root, set resource requests, and use **signed images** from ShopNorth's registry; anything else is rejected at admission.
 - **Separate clusters** for staging and production, so a staging experiment can't affect customers.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — The Foundation Under the Cluster
+
+Kubernetes sits on AWS building blocks that Kabir built with Terraform before week 10:
+
+| Building block | ShopNorth's setup | Learn it |
+|----------------|-------------------|----------|
+| Network | VPC `10.20.0.0/16` across 3 zones: public subnets for the ALB and NAT gateways, large private subnets for pods, data subnets with no internet route | [Networking & VPC](/tutorials/aws-networking-vpc) |
+| Firewalls | Security groups chained ALB → nodes → RDS, Redis, MSK, OpenSearch | [Networking & VPC](/tutorials/aws-networking-vpc) |
+| Cluster | EKS control plane run by AWS; access entries map SSO roles to read-only Kubernetes access | [Containers on AWS](/tutorials/aws-containers) |
+| Nodes | A managed node group (an Auto Scaling group) for add-ons; Karpenter-launched EC2 nodes for the services | [EC2 & Auto Scaling](/tutorials/aws-ec2-autoscaling) |
+| Load balancer | The ALB created by the AWS Load Balancer Controller: readiness health checks, a 30 s deregistration delay | [EC2 & Auto Scaling](/tutorials/aws-ec2-autoscaling) |
+| Permissions | One IAM role per service through Pod Identity | [IAM](/tutorials/aws-iam) |
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -354,6 +371,10 @@ kubectl argo rollouts abort order-service -n shopnorth    # emergency stop of a 
 | [Kubernetes in Production](/tutorials/k8s-production) | Autoscaling, GitOps, policies | HPA, Karpenter, Argo CD, Kyverno |
 | [Load Balancing](/tutorials/load-balancing) | L7 load balancers, health checks | The ALB in front of the gateway |
 | [Service Discovery & Config](/tutorials/service-discovery) | DNS-based discovery | `http://order-service` |
+| [Networking & VPC](/tutorials/aws-networking-vpc) | VPC, subnets, security groups | The network the cluster runs in |
+| [EC2, Load Balancers & Auto Scaling](/tutorials/aws-ec2-autoscaling) | Instances, target groups, Auto Scaling, quotas | Nodes, the ALB, and capacity for the sale |
+| [Containers on AWS](/tutorials/aws-containers) | ECR, EKS specifics, upgrades | The EKS clusters and how they're upgraded |
+| [High Availability & DR](/tutorials/high-availability) | Zone failures, static stability | Why pods spread across three zones with headroom |
 
 ## 📚 Extra Case Studies
 

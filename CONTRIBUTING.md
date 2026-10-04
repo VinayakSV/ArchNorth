@@ -52,6 +52,7 @@ By submitting a pull request, you agree that:
 
 - **Code** you contribute is licensed under the [MIT License](./LICENSE)
 - **Content** (tutorials, markdown, diagrams) you contribute is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+- **Code examples** inside the tutorials you contribute (code blocks other than Mermaid diagrams) are licensed under [MIT No Attribution (MIT-0)](./LICENSE-CODE-EXAMPLES), so learners can reuse them anywhere
 - You have the legal right to make the contribution
 - Your contribution does not contain copyrighted material from others (unless properly attributed and compatible with our licenses)
 - Maintainers may edit, restructure, or remove your contribution

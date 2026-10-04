@@ -1,5 +1,13 @@
 # SQL Basics — SELECT, WHERE, ORDER BY
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Use the SQL Playground above** to run every query in this tutorial against a live airline database (5 airlines, 10 airports, 28 flights, 30 passengers, 86 bookings).
 
 ---

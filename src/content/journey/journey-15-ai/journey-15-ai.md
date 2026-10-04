@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 15 of 15 · Phase: **Operate & Evolve**
+🛒 **The ShopNorth Journey** · Chapter 15 of 15 · Phase: **Operate & Evolve** · SDLC stage: **Maintenance & evolution**
 
 **Previously:** ShopNorth survived the Diwali sale: 71,500 orders, a payment incident mitigated in 12 minutes, and a postmortem whose action items are now in the backlog ([Chapter 14](/tutorials/journey-14-launch-day)).
 

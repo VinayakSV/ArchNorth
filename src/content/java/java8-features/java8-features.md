@@ -1,5 +1,13 @@
 # Java 8 — All Features Explained with Real Scenarios
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why Java 8 Was a Game Changer
 
 Before Java 8, writing Java felt like writing an essay when you just needed a tweet. Java 8 brought **functional programming** to Java — less boilerplate, more expressive code.

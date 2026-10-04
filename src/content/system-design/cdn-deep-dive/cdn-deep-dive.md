@@ -1,5 +1,13 @@
 # CDN — Content Delivery Networks — The Global Pizza Chain Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Pizza Chain Analogy
 
 Imagine you own a pizza restaurant in Mumbai. A customer in New York orders a pizza. You could ship it from Mumbai — but it would take forever and arrive cold. Instead, you open franchise kitchens in every major city. Each kitchen keeps the most popular pizzas ready. When someone in New York orders, the nearest kitchen serves it instantly.

@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 8 of 15 · Phase: **Quality**
+🛒 **The ShopNorth Journey** · Chapter 8 of 15 · Phase: **Quality** · SDLC stage: **Testing**
 
 **Previously:** ShopNorth is built and secured: services, events, the checkout saga, login, authorization, and verified payment webhooks ([Chapter 7](/tutorials/journey-07-security)).
 
@@ -370,6 +370,16 @@ export function checkout() {
 - **Payments use the provider's sandbox** in every non-production environment; production smoke tests stop before payment.
 - **Each integration test starts from a known state** (fresh containers, or each test cleans up what it created), so tests don't depend on run order.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Testing the Cloud Parts
+
+- **Integration tests** add **LocalStack** (through Testcontainers) for S3, SQS, and SNS, next to the real PostgreSQL and Kafka containers — presigned uploads and the notification queues are tested without an AWS account.
+- **Staging is a real AWS environment** in its own account, built from the same Terraform, so smoke and regression tests also exercise IAM roles, security groups, and managed services.
+- **Game days** use **AWS Fault Injection Service** in staging: stop the instances in one availability zone, add latency to the database, and confirm the system degrades the way the design says ([High Availability & DR](/tutorials/high-availability)).
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -394,6 +404,7 @@ export function checkout() {
 | [Apache Kafka Deep Dive](/tutorials/kafka-deep-dive) | Consumers, offsets, redelivery | Testing duplicate event delivery |
 | [Multithreading](/tutorials/multithreading) · [ConcurrentHashMap](/tutorials/concurrent-hashmap) | Executors, thread-safe collections | The parallel duplicate-order test |
 | [AI-SDLC](/tutorials/ai-sdlc) | AI-generated tests with human review | Drafting test cases from acceptance criteria |
+| [High Availability & DR](/tutorials/high-availability) | Failover, chaos experiments, game days | Fault Injection Service experiments in staging |
 
 ## 📚 Extra Case Studies
 

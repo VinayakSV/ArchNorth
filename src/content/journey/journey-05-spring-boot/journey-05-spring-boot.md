@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 5 of 15 · Phase: **Build**
+🛒 **The ShopNorth Journey** · Chapter 5 of 15 · Phase: **Build** · SDLC stage: **Development**
 
 **Previously:** The domain model (Chapter 3) and the database with its guarantees — unique idempotency keys, atomic stock reservations — are designed ([Chapter 4](/tutorials/journey-04-data-sql)).
 
@@ -388,6 +388,19 @@ class CancelExpiredOrdersJob {
 
 `@Scheduled` needs `@EnableScheduling` on a configuration class. `FOR UPDATE SKIP LOCKED` is what makes the job safe to run on every pod: each instance grabs a different batch instead of all of them cancelling the same orders.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Talking to AWS Without Keys
+
+The Order service never sees an AWS access key:
+
+- **Credentials** come from the pod's IAM role through EKS Pod Identity. The AWS SDK for Java v2 finds them through its default credentials chain, so the same code runs on a laptop (SSO profile) and in production ([IAM, Secrets & Encryption](/tutorials/aws-iam)).
+- **Secrets** such as `DB_PASSWORD` arrive as environment variables synced from AWS Secrets Manager (Chapters 7 and 12).
+- **Files never pass through a service.** The Catalog service, for example, hands admins **presigned S3 URLs** so product photos upload straight to S3 ([S3](/tutorials/aws-s3)).
+- **Timeouts and retries** on the call to Inventory are the application's half of high availability ([High Availability & DR](/tutorials/high-availability)).
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -415,6 +428,8 @@ class CancelExpiredOrdersJob {
 | [CompletableFuture](/tutorials/completable-future) | Running independent calls in parallel | Fetching prices and coupon data concurrently (an optimization for later) |
 | [Multithreading](/tutorials/multithreading) | Thread pools and their limits | Why timeouts protect the request thread pool |
 | [Java Coding Standards](/tutorials/java-coding-standards) | Naming, structure, clean code | Package-by-feature layout |
+| [IAM, Secrets & Encryption](/tutorials/aws-iam) | Roles, Pod Identity, Secrets Manager | No keys in code; each service has its own role |
+| [High Availability & DR](/tutorials/high-availability) | Timeouts, retries with jitter, degradation | The Inventory call's timeouts and retries |
 
 ## 📚 Extra Case Studies
 

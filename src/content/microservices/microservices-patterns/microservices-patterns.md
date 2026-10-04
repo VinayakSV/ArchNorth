@@ -1,5 +1,13 @@
 # Microservices Patterns — When and Why to Use Each
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The City Analogy
 
 A monolith is like a **single mega-mall** — everything under one roof. If the food court catches fire, the entire mall shuts down.

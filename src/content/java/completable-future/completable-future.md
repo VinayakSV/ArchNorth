@@ -1,5 +1,13 @@
 # CompletableFuture & Parallel Streams — Async Java
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Pizza Delivery Analogy
 
 - **Synchronous**: You call the pizza shop, stay on the phone until it's delivered. You can't do anything else.

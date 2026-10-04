@@ -1,5 +1,13 @@
 # Load Balancing — The Complete Guide — The Airport Security Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Airport Security Analogy
 
 Imagine an airport with 10 security check lanes but only 1 is open. The queue stretches for hours. Now open all 10 lanes and put a coordinator at the entrance who directs passengers to the shortest queue. That coordinator is your **load balancer** — it distributes incoming traffic across multiple servers so no single server gets overwhelmed.

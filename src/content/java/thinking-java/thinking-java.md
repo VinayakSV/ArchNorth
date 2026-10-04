@@ -1,5 +1,13 @@
 # How to Think in Java — Picking the Right Tool for the Right Job
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why This Tutorial Exists
 
 Java has 50+ collection types, 10+ concurrency tools, and features spanning Java 8 to 21. Most developers memorize "use HashMap for key-value" without understanding WHEN HashMap is wrong. This tutorial teaches you the **decision-making process** — so you can pick the right tool for ANY problem, even ones you haven't seen before.

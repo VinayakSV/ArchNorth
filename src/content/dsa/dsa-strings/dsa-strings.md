@@ -1,5 +1,13 @@
 # String Problems — Anagrams, Palindromes, Parsing, and Compression
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > String questions are the most common "warm-up" in backend interviews. They're rarely hard; they're easy to get *subtly* wrong. All code is Java.
 
 ---

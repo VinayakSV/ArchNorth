@@ -1,5 +1,13 @@
 # Java OOP — The Four Pillars, Explained Through Real Code
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · ShopNorth uses this in [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > You've used OOP for years; this page is about *saying it crisply* and spotting the design traps interviewers probe.
 
 ---

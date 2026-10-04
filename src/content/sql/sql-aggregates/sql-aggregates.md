@@ -1,5 +1,13 @@
 # SQL Aggregates — GROUP BY, HAVING, COUNT, SUM, AVG
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Use the SQL Playground above** — all queries run live. Aggregation is where SQL goes from "retrieve data" to "answer business questions."
 
 ---

@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 11 of 15 · Phase: **Ship**
+🛒 **The ShopNorth Journey** · Chapter 11 of 15 · Phase: **Ship** · SDLC stage: **Deployment — CI/CD**
 
 **Previously:** Every service is a small, scanned, SHA-tagged Docker image, and the whole stack starts with one Compose command ([Chapter 10](/tutorials/journey-10-docker)).
 
@@ -237,6 +237,16 @@ These four metrics, from the DORA research program, measure both **speed** and *
 
 **Before the sale:** a code freeze starts five days before Diwali — only fixes, each approved by the tech lead. Fixes still go through the *same pipeline*. Skipping the pipeline "because it's urgent" is exactly how urgent situations become outages.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — The Pipeline's Keys to the Cloud
+
+- **No stored AWS keys.** GitHub Actions gets short-lived credentials through **OIDC**; each role's trust policy accepts only the `main` branch of one repository, and each role does one job — for example, pushing to one ECR repository ([IAM, Secrets & Encryption](/tutorials/aws-iam)).
+- **Infrastructure deploys like code.** Terraform changes show a `plan` on the pull request; the Lambda functions are **SAM** stacks deployed through CloudFormation change sets, with alarms as rollback triggers ([CloudFormation, SAM & CDK](/tutorials/aws-cloudformation)).
+- **Humans don't click in production.** Engineers have read-only access there, so every production change flows through this pipeline or GitOps.
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -261,6 +271,8 @@ These four metrics, from the DORA research program, measure both **speed** and *
 | [Cloud & Infrastructure Decisions](/tutorials/cloud-infra-decisions) | IAM, OIDC, environments | Keyless AWS access from CI |
 | [Database Decisions](/tutorials/database-decisions) | Online migrations | Rollback-safe releases |
 | [AI-SDLC](/tutorials/ai-sdlc) | DORA metrics, AI in the delivery process | Measuring delivery |
+| [IAM, Secrets & Encryption](/tutorials/aws-iam) | OIDC federation, least privilege | Keyless AWS access from GitHub Actions |
+| [CloudFormation, SAM & CDK](/tutorials/aws-cloudformation) | Infrastructure as code, change sets | SAM deploys and Terraform plans in the pipeline |
 
 ## 📚 Extra Case Studies
 

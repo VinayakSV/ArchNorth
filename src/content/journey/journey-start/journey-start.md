@@ -53,6 +53,8 @@ flowchart LR
 
 Around it sit the things that make it a *production* system: Auth0 for login, GitHub Actions for CI/CD, SonarQube and Coverity for code quality, Docker and Kubernetes for running it, and Datadog for knowing whether it's healthy.
 
+All of it runs on **AWS** in the Mumbai region. [AWS for Developers](/tutorials/aws-start-here) maps every box above to the AWS service behind it — why it was chosen and how it's used — and most chapters have a ☁️ *ShopNorth on AWS* section.
+
 ## The Map — 15 Chapters, One SDLC
 
 | Phase | Chapter | What happens to ShopNorth | Deep-dive topics |
@@ -94,6 +96,16 @@ The dotted arrow matters. Real SDLC is a loop: what you learn in production (Cha
 3. **Build along (6-10 weeks).** Every chapter ends with a *Mini Project* step. Together they build your own small ShopNorth: one service that grows from a domain model to a containerized, tested, monitored app on Kubernetes. You finish with a portfolio project you can talk about in interviews.
 
 **How the site connects back to the story:** every topic tutorial on this site ends with an orange **🛒 ShopNorth Journey** box like the one at the top of this page. It tells you how ShopNorth uses that topic and which chapter to read next. The other examples in those tutorials (Netflix, Uber, payment gateways, and so on) are *extra case studies* — read them to see the same idea in different industries.
+
+**Every topic also starts with a 📍 SDLC stage line**, so you always know where it fits in the lifecycle. The stages are the classic SDLC stages, grouped into the journey's five phases:
+
+| Journey phase | SDLC stages | Chapters |
+|---------------|-------------|----------|
+| **Plan & Design** | Requirements & planning; design — architecture, low-level design, data model | 1-4 |
+| **Build** | Development — services & events, security | 5-7 |
+| **Quality** | Testing; code quality & review | 8-9 |
+| **Ship** | Deployment — packaging, CI/CD, infrastructure & runtime | 10-12 |
+| **Operate & Evolve** | Operations — monitoring, release & incidents; maintenance & evolution | 13-15 |
 
 <div class="callout-tip">
 

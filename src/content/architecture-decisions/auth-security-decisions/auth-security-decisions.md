@@ -1,5 +1,13 @@
 # Auth & Security Decisions — Choosing the Right Flow for Every Client, Service, and Partner
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — security** · ShopNorth uses this in [Chapter 7 · Security & Login](/tutorials/journey-07-security)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Architecture Decisions · Security** — "We use JWT" is not an authentication architecture. Real systems have browsers, mobile apps, backend services, partners, and enterprise customers — each needs a different flow. This page is a decision guide: which protocol, which OAuth grant, where tokens live, how services trust each other, and the mistakes that cause real breaches.
 
 ---

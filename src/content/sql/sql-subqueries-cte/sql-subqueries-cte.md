@@ -1,5 +1,13 @@
 # SQL Subqueries & CTEs — WITH, EXISTS, Recursive
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Use the SQL Playground above** — every query runs live. Subqueries and CTEs are the tools that turn SQL from "retrieve data" into "solve problems."
 
 ---

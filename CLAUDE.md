@@ -41,13 +41,30 @@ Tutorials are markdown files loaded dynamically — understanding this pipeline 
 
 Registry array order is the sidebar order *and* the Prev/Next order (`getAdjacentTutorials`), so keep each category and subcategory contiguous in `tutorialRegistry.js`.
 
-To add a tutorial: create `src/content/<category>/<id>/<id>.md` following the Content Authoring Guide in README.md, then add a matching entry to `tutorialRegistry.js` (and update `getCategoryIcon()` if it's a new category). Also end it with a ShopNorth Journey box (see below).
+To add a tutorial: create `src/content/<category>/<id>/<id>.md` following the Content Authoring Guide in README.md, then add a matching entry to `tutorialRegistry.js` (and update `getCategoryIcon()` if it's a new category). Start it with an SDLC stage block and end it with a ShopNorth Journey box (see below).
+
+Categories, in registry order: ShopNorth Journey, System Design (whose "Core Concepts" subcategory holds scalability, high availability & DR, CAP, replication & sharding, and consensus), Low-Level Design, Real-World Builds, Architecture Decisions, AI Engineering, Microservices, Java, Spring Boot, SQL, DSA, Docker, Kubernetes, and **AWS** (`src/content/aws/`, 14 developer-focused tutorials starting at `aws-start-here`).
 
 ### The ShopNorth Journey (the main story)
 
 The first category, **ShopNorth Journey** (`src/content/journey/`, ids `journey-start` and `journey-01-…` to `journey-15-…`), follows one fictional e-commerce product through the whole SDLC: requirements → HLD → LLD → SQL → Spring Boot → microservices → security → testing → code quality → Docker → CI/CD → Kubernetes → Datadog → launch/incidents → AI. Chapters share one consistent story world (team: Ananya PM, Priya tech lead, Arjun, Rohan, Meera QA, Kabir SRE; sale-day numbers: 3,000 req/s, 150 orders/s; order states and schema from Chapters 3-4). Keep new content consistent with it.
 
 Each chapter opens and closes with a `callout-journey` block (orange, deliberately louder than other callouts) and has "Go Deeper" links to topic tutorials. Every other tutorial ends with a journey box between `<!-- journey-link:start -->` and `<!-- journey-link:end -->` markers, saying how ShopNorth uses that topic and linking to the matching chapter (tutorials not in the main story are labeled "Extra case study"). New tutorials need one too.
+
+**SDLC stage line.** Every topic tutorial starts (right after the H1) with a `<div class="sdlc-stage">` block between `<!-- sdlc-stage:start -->` and `<!-- sdlc-stage:end -->`: "📍 **SDLC stage: <stage>** · ShopNorth uses this in [Chapter N · …]" (or "Extra case study for"). The stage follows from the chapter in the journey box: Ch 1 requirements & planning; Ch 2-4 design (architecture, low-level design, data model); Ch 5-7 development; Ch 8-9 testing; Ch 10-12 deployment (packaging, CI/CD, infrastructure & runtime); Ch 13-14 operations (monitoring, release & incidents); Ch 15 maintenance & evolution. Chapters show it in their opening box after "Phase:". The class is styled in `MarkdownViewer.jsx`.
+
+**ShopNorth on AWS.** The story runs on AWS, and the facts must stay consistent across chapters and the AWS tutorials:
+- **Location:** Mumbai (`ap-south-1`, 3 AZs), with DR backups in Hyderabad (`ap-south-2`).
+- **Accounts:** management, shared (ECR, CI roles), staging, production, and log-archive.
+- **Network:** production VPC `10.20.0.0/16`.
+- **Compute:** EKS with a managed node group plus Karpenter nodes; an ALB from the AWS Load Balancer Controller, with WAF.
+- **Databases:** RDS PostgreSQL **Multi-AZ instances**, not DB clusters, because DB clusters can't replicate automated backups cross-region. `orders` has one read replica for reports. ElastiCache handles carts and cache; OpenSearch handles search.
+- **Messaging:** MSK with IAM auth on port 9098 (RF 3, `min.insync.replicas` 2). Email and SMS go Kafka → Notification service → SNS → SQS.
+- **Events and functions:** EventBridge for S3, Auth0, AWS, and schedule events. Three Lambdas: `image-resizer`, `security-alerts`, `sales-report`.
+- **Edge:** CloudFront for `www`, with `/assets`, `/resized`, and `/sale` behaviors. The API is not behind CloudFront.
+- **Infrastructure as code and monitoring:** Terraform for the platform, SAM for the Lambdas, Datadog as primary monitoring with a few independent CloudWatch alarms.
+
+Section 6 of `aws-start-here` is the service map. Chapters' "☁️ ShopNorth on AWS" sections sit between `<!-- aws-section:start -->` and `<!-- aws-section:end -->` markers.
 
 ### Content authoring conventions (non-negotiable structure, per README/CONTRIBUTING)
 
@@ -113,7 +130,7 @@ Fonts are self-hosted: `main.jsx` imports `@fontsource-variable/inter` and `@fon
 
 ## Licensing split (relevant when adding/editing files)
 
-Code (everything outside `src/content/`) is MIT. Everything under `src/content/` (tutorial markdown, diagrams, embedded examples) is CC BY-NC-SA 4.0, per README.md and `LICENSE-CONTENT`.
+Code (everything outside `src/content/`) is MIT. Under `src/content/`, the written content and diagrams (including Mermaid blocks) are CC BY-NC-SA 4.0 (`LICENSE-CONTENT`), and the code examples in code blocks are MIT-0 (`LICENSE-CODE-EXAMPLES`), so learners can reuse them at work without credit. Write new examples from scratch: don't paste third-party code into a tutorial unless its license allows reuse, and then name its source and license in the block.
 
 Third-party notices are generated, not hand-maintained: the Vite plugin `scripts/third-party-notices.js` writes `dist/third-party-licenses.txt` from the modules actually in the bundle, plus the Workbox packages copied into the service worker (`SERVICE_WORKER_PACKAGES`). It **fails the build** when a shipped package's license isn't in its permissive `ALLOWED` set; review the license before adding anything there, and record packages with no `license` field in `LICENSE_OVERRIDES`. Packages that ship no license file (the Firebase SDK) get their copyright lines from the bundled source headers, and their full license text from `scripts/license-texts/<SPDX id>.txt`.
 

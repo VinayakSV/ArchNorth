@@ -1,5 +1,13 @@
 # How to Think in Microservices — When, Why, and How to Split
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why This Tutorial Exists
 
 Everyone knows microservices. Few understand WHEN to use them. The biggest mistake in the industry isn't building monoliths — it's splitting into microservices too early, for the wrong reasons. This tutorial teaches you the **decision-making framework** — so you can look at ANY system and know whether to split, what to split, and how to handle the consequences.

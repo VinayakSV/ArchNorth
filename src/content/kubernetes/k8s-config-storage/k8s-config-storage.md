@@ -1,5 +1,13 @@
 # Config, Secrets & Storage — Keeping Images Generic and Data Safe
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Kubernetes · Networking & Config** — One image, many environments: configuration must come from outside the container. And pods are disposable, so anything worth keeping must live somewhere a pod restart can't erase it.
 
 ---

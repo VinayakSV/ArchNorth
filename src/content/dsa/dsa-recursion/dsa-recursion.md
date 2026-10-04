@@ -1,5 +1,13 @@
 # Recursion & Backtracking — Trust the Function, Then Explore Every Choice
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > Recursion feels hard until you stop tracing it in your head. This page gives you one mental model and one template that cover subsets, permutations, combinations, and N-Queens. All code is Java.
 
 ---

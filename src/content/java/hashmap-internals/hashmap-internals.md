@@ -1,5 +1,13 @@
 # HashMap Internals — How It Really Works
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Real-World Analogy
 
 Imagine a **library** with 16 shelves. When a new book arrives, the librarian doesn't just put it anywhere — she looks at the book's title, does a quick calculation, and says *"This goes on shelf 7."*

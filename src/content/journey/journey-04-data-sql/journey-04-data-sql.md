@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 4 of 15 · Phase: **Plan & Design**
+🛒 **The ShopNorth Journey** · Chapter 4 of 15 · Phase: **Plan & Design** · SDLC stage: **Design — data model**
 
 **Previously:** You modeled orders, money, pricing rules, and reservations as Java classes that guard the business rules ([Chapter 3](/tutorials/journey-03-low-level-design)).
 
@@ -275,6 +275,23 @@ And never lock a busy table: create indexes with `CREATE INDEX CONCURRENTLY` (in
 - **Growth:** at ~26 million orders after three years (Chapter 1), the `orders` table gets **monthly range partitioning** on `created_at`. Recent partitions stay hot and small; old ones can be archived or detached.
 - **Recovery:** the managed PostgreSQL runs **Multi-AZ** with a synchronous standby (RPO 0 for orders) and **point-in-time recovery** for human mistakes ("restore to 10:41, just before the bad script"). Kabir runs a restore drill every quarter — a backup you've never restored is only a hope.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Where the Schema Lives
+
+The schema runs on **Amazon RDS for PostgreSQL**, one instance per service database (catalog, orders, inventory):
+
+| Setting | Value | Why |
+|---------|-------|-----|
+| Deployment | Multi-AZ instance — a synchronous standby in another zone | Failover in 1-2 minutes without losing committed orders |
+| Reports | A read replica of `orders` | Admin sales reports never slow down checkout |
+| Backups | Automated, 14 days, point-in-time recovery, replicated to Hyderabad | Undo a bad migration; survive a regional disaster |
+| Major upgrades | RDS Blue/Green Deployments | A switchover of about a minute instead of hours of downtime |
+
+What happens when one primary isn't enough is in [Replication & Sharding](/tutorials/replication-partitioning); the RDS details are in [Databases on AWS](/tutorials/aws-databases).
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -300,6 +317,8 @@ And never lock a busy table: create indexes with `CREATE INDEX CONCURRENTLY` (in
 | [Database Decisions](/tutorials/database-decisions) | Schema design, partitioning, replicas | Constraints, partitioning plan, read replica for reports |
 | [@Transactional — Propagation & Isolation](/tutorials/spring-transactional) | Isolation levels, locking | Why `READ COMMITTED` + conditional updates is enough |
 | [Recursion & Backtracking](/tutorials/dsa-recursion) | Thinking recursively | The category tree query is recursion in SQL |
+| [Replication & Sharding](/tutorials/replication-partitioning) | Replicas, lag, partition keys, resharding | Why one primary is enough for years, and the plan when it isn't |
+| [Databases on AWS](/tutorials/aws-databases) | RDS, Aurora, DynamoDB, ElastiCache | Multi-AZ, the reports replica, backups, Blue/Green upgrades |
 
 ## 📚 Extra Case Studies
 

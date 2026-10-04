@@ -1,5 +1,13 @@
 # SQL Window Functions — ROW_NUMBER, RANK, LAG, Running Totals
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Use the SQL Playground above** — window functions run live. These are the queries that separate junior from senior SQL developers. Master them here.
 
 ---

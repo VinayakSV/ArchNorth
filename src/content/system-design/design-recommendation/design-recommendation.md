@@ -1,5 +1,13 @@
 # Design a Recommendation System — Candidate Generation, Ranking, Serving, and Measuring What Works
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **System Design · Classic Designs** — "Customers who bought this also bought…" drives a big share of revenue at Amazon, Netflix, Flipkart, and Swiggy. You don't need to be an ML researcher to design one: the architecture is a funnel of retrieval and ranking stages, and most of the hard problems are data freshness, cold start, latency, and measuring impact honestly.
 
 ---

@@ -1,5 +1,13 @@
 # Data Ingestion Platform
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · Extra case study for [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Problem — Real Scenario
 
 Your company builds a SaaS analytics product. Customers (tenants) upload CSV files — some 10MB, some 5GB. Some upload manually via UI, others have automated pipelines pushing files every hour. You have 200 tenants today, growing to 2,000 next year.

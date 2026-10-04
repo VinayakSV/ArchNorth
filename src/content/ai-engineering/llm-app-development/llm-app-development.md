@@ -1,5 +1,13 @@
 # Building LLM Apps — APIs, Streaming, Tool Use, Resilience & Cost
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Building with LLMs** — Time to put a model inside a real service. Everything you know about calling remote APIs still applies — plus a few things that are new: token-based cost, streamed output, the model asking *your code* to run functions, and outputs that must be validated before anyone trusts them.
 
 ---

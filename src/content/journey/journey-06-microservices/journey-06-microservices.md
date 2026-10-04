@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 6 of 15 · Phase: **Build**
+🛒 **The ShopNorth Journey** · Chapter 6 of 15 · Phase: **Build** · SDLC stage: **Development — services & events**
 
 **Previously:** You built the Order service: `POST /orders` with idempotency, short transactions, resilient calls to Inventory, and an outbox row written with every order ([Chapter 5](/tutorials/journey-05-spring-boot)).
 
@@ -253,6 +253,21 @@ sequenceDiagram
 
 On Kubernetes (Chapter 12), each service gets a stable DNS name (`http://order-service` inside the namespace), and the platform load-balances across healthy pods. ShopNorth doesn't need a separate service registry like Eureka. Configuration lives in Kubernetes ConfigMaps and Secrets, not in a config server.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — The Event Plumbing
+
+| Need | AWS service | How ShopNorth uses it | Learn it |
+|------|-------------|----------------------|----------|
+| Business events (orders, payments, inventory, catalog) | **MSK** (managed Kafka) | 3 brokers across 3 zones, IAM auth per service, `acks=all` | [MSK](/tutorials/aws-msk) |
+| Email and SMS delivery with retries | **SNS → SQS** | The Notification service publishes once; separate email and SMS queues with dead-letter queues | [SQS & SNS](/tutorials/aws-sqs-sns) |
+| AWS and SaaS events, schedules | **EventBridge** | Image uploads, Auth0 security events, AWS findings, the nightly report | [EventBridge](/tutorials/aws-eventbridge) |
+| Small event-driven jobs | **Lambda** | Image resizing, security alerts, the sales report | [Lambda](/tutorials/aws-lambda) |
+
+The outbox relay's ShedLock is one example of coordination between pods. [Consensus & Coordination](/tutorials/consensus-coordination) explains when you need a single active instance, when `SKIP LOCKED` is enough, and why a lock never replaces the database's conditional update.
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -279,6 +294,11 @@ On Kubernetes (Chapter 12), each service gets a stable DNS name (`http://order-s
 | [Apache Kafka Deep Dive](/tutorials/kafka-deep-dive) | Topics, partitions, consumer groups, delivery semantics | Keys, ordering, retries, dead-letter topics |
 | [Messaging & Event Systems](/tutorials/messaging-decisions) | Choosing brokers and patterns | Why Kafka for ShopNorth's events |
 | [Service Discovery & Config](/tutorials/service-discovery) | Registries vs platform DNS | Kubernetes DNS instead of Eureka |
+| [MSK](/tutorials/aws-msk) | Kafka on AWS: IAM auth, partitions, operations | The cluster behind every event in this chapter |
+| [SQS & SNS](/tutorials/aws-sqs-sns) | Queues, DLQs, fan-out | Email and SMS delivery for the Notification service |
+| [EventBridge](/tutorials/aws-eventbridge) | Event routing, Scheduler, SQS vs SNS vs Kafka | AWS and Auth0 events, scheduled jobs |
+| [Lambda](/tutorials/aws-lambda) | Serverless functions | Image resizing, security alerts, the sales report |
+| [Consensus & Coordination](/tutorials/consensus-coordination) | Leader election, leases, fencing tokens | ShedLock for the outbox relay; `SKIP LOCKED` for jobs |
 
 ## 📚 Extra Case Studies
 

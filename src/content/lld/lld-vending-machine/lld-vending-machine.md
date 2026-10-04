@@ -1,5 +1,13 @@
 # Design a Vending Machine — State Pattern, Making Change, and Hardware That Fails
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · ShopNorth uses this in [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Low-Level Design · Classic LLD** — The vending machine is *the* State-pattern interview question. Most answers stop at a state diagram. This one also handles the parts real machines deal with: making change with limited coins, a motor that jams, power loss mid-sale, and UPI payments that confirm late.
 
 ---

@@ -1,5 +1,13 @@
 # Design a Library Management System — Beyond CRUD: Copies, Reservations, Fines, and Fairness
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · Extra case study for [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Low-Level Design · Classic LLD** — Interviewers use this "easy" problem to see whether you model the domain precisely (a *book* is not a *copy*), put rules in the right place, and handle the tricky parts: reservation queues, fines with dates and money, and two members grabbing the last copy.
 
 ---

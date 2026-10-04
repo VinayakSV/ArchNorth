@@ -1,5 +1,13 @@
 # Caching Strategy — Where to Cache, Which Pattern, and How to Stay Consistent
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Architecture Decisions · Data Layer** — "Add Redis" is the most common performance fix and one of the most common sources of production bugs: stale prices, cache stampedes that take down the database, memory blowups, and data leaking between users. This page covers the decisions — layers, patterns, invalidation, and failure modes — with Spring and Redis code.
 
 ---

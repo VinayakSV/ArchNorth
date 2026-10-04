@@ -1,5 +1,13 @@
 # Sliding Window — Contiguous Subarray & Substring Problems in O(n)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Operations — release & incidents** · ShopNorth uses this in [Chapter 14 · Launch Day & Incidents](/tutorials/journey-14-launch-day)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > If a problem says "contiguous subarray" or "substring" and asks for a longest/shortest/maximum, think sliding window first. All code is Java.
 
 ---

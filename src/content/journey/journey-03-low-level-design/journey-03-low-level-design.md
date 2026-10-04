@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 3 of 15 · Phase: **Plan & Design**
+🛒 **The ShopNorth Journey** · Chapter 3 of 15 · Phase: **Plan & Design** · SDLC stage: **Design — low-level design**
 
 **Previously:** Priya's architecture split ShopNorth into Catalog, Cart, Order, Inventory, Payment, and Notification services, with checkout as "reserve stock → create order → pay → confirm via events" ([Chapter 2](/tutorials/journey-02-system-design)).
 

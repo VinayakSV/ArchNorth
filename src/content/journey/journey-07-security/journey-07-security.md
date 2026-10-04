@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 7 of 15 · Phase: **Build**
+🛒 **The ShopNorth Journey** · Chapter 7 of 15 · Phase: **Build** · SDLC stage: **Development — security**
 
 **Previously:** ShopNorth's services work together through one gateway and Kafka events, and the checkout saga survives failures and duplicates ([Chapter 6](/tutorials/journey-06-microservices)).
 
@@ -213,6 +213,23 @@ A Datadog monitor (Chapter 13) alerts on unusual admin activity, such as more th
 | A09 Security Logging and Monitoring Failures | Audit logs, security alerts (Chapter 13) |
 | A10 Server-Side Request Forgery | No fetching of user-supplied URLs; the admin image import accepts only approved domains |
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Security Below the Application
+
+The rules in this chapter continue below the code:
+
+| Layer | AWS control | ShopNorth | Learn it |
+|-------|-------------|-----------|----------|
+| People | IAM Identity Center with MFA | Read-only in production; time-limited break-glass access | [IAM](/tutorials/aws-iam) |
+| Services | One IAM role per service (EKS Pod Identity) | Each service reads only its own secrets and topics | [IAM](/tutorials/aws-iam) |
+| Secrets and keys | Secrets Manager with rotation; KMS keys | Database passwords, the webhook secret, the Auth0 client secret | [IAM](/tutorials/aws-iam) |
+| Network | Private subnets; security groups that reference each other | Databases unreachable from the internet | [Networking & VPC](/tutorials/aws-networking-vpc) |
+| Edge | WAF managed rules, rate rules, Bot Control | Floods and bots stopped before the gateway | [CloudFront & Edge](/tutorials/aws-cloudfront) |
+| Audit | A CloudTrail organization trail with Object Lock | Every AWS API call recorded, tamper-proof | [CloudWatch & CloudTrail](/tutorials/aws-cloudwatch) |
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -237,6 +254,8 @@ A Datadog monitor (Chapter 13) alerts on unusual admin activity, such as more th
 | [Rate Limiter](/tutorials/rate-limiter) · [Distributed Rate Limiter](/tutorials/design-rate-limiter-distributed) | Protecting endpoints from abuse | Login and checkout limits |
 | [Config, Secrets & Storage](/tutorials/k8s-config-storage) | Kubernetes Secrets and external secret stores | Secrets Manager → Kubernetes Secret → env var |
 | [Cloud & Infrastructure Decisions](/tutorials/cloud-infra-decisions) | Managing secrets and IAM on AWS | Secrets Manager with rotation |
+| [IAM, Secrets & Encryption](/tutorials/aws-iam) | Policies, roles, OIDC, Secrets Manager, KMS | One role per service; no long-lived keys |
+| [Networking & VPC](/tutorials/aws-networking-vpc) | Subnets, security groups, endpoints | Private data subnets and the security-group chain |
 
 ## 📚 Extra Case Studies
 

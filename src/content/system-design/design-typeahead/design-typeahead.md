@@ -1,5 +1,13 @@
 # Design Typeahead / Autocomplete — The Librarian Who Finishes Your Sentences
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Librarian Analogy
 
 Imagine a librarian who, the moment you say "I'm looking for a book about quant—", immediately suggests "Quantum Physics?", "Quantitative Finance?", "Quantum Computing?" — ranked by what most people search for. She does this in under 100ms, for millions of visitors simultaneously. That's typeahead search.

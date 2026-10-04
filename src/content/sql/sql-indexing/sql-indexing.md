@@ -1,5 +1,13 @@
 # Indexing & Query Optimization — Make Slow Queries Fast Without Guessing
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > Every query below runs in the **SQL Playground** above (SQLite in your browser). Use `EXPLAIN QUERY PLAN` to watch the database change its mind.
 
 ---

@@ -1,5 +1,13 @@
 # Design Snake & Ladder Game — Applying the 7-Step LLD Framework
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Testing** · Extra case study for [Chapter 8 · Testing — Unit to Regression](/tutorials/journey-08-testing)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Prerequisite**: Read [How to Think in LLD](./lld-thinking-framework.md) first. This tutorial applies that framework step by step.
 
 ## The Blueprint Analogy

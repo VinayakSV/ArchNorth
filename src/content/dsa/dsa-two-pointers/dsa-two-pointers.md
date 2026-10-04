@@ -1,5 +1,13 @@
 # Two Pointers — Turn O(n²) Pair Searches Into One Pass
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > This is the first DSA pattern because it's the most reusable: it shows up in arrays, strings, linked lists, and merges. All code is Java.
 
 ---

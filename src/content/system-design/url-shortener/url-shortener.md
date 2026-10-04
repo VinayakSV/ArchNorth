@@ -1,5 +1,13 @@
 # URL Shortener — Complete System Design
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · Extra case study for [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## 1. Problem Statement
 
 Design a URL shortening service (like TinyURL or Bitly) that:

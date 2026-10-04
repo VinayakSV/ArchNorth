@@ -1,5 +1,13 @@
 # Database Decisions — When to Pick What and Why
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · ShopNorth uses this in [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Decision Framework
 
 Every database choice comes down to 4 questions:
@@ -128,6 +136,8 @@ WHERE created_at > '2024-01-01'
 ---
 
 ## Sharding — When and How
+
+Replication, partition keys, consistent hashing, hot keys, and resharding without downtime are covered in depth in [Replication & Sharding](/tutorials/replication-partitioning).
 
 ### When do you need sharding?
 

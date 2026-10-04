@@ -1,5 +1,13 @@
 # MCP — Model Context Protocol
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > The open standard that connects AI models to your data, tools, and systems. By the end of this guide you will understand MCP from protocol internals to production architecture, and be able to build MCP servers and clients for any type of application.
 
 ---

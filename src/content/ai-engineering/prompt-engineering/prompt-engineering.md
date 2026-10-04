@@ -1,5 +1,13 @@
 # Prompt Engineering & Structured Output — Prompts as Specs, Not Magic Words
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Foundations** — Forget "prompt hacks". A good prompt is a clear specification: who the model is working for, what it must do, what it must never do, what the input is, and exactly what shape the output takes. Then you test it like code.
 
 ---

@@ -1,5 +1,13 @@
 # Workloads — Deployments, StatefulSets, DaemonSets, Jobs
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Kubernetes · Fundamentals** — You rarely create Pods yourself. You create a *controller* that creates and replaces Pods for you. Picking the right controller — and configuring its rollout — is most of day-to-day Kubernetes work.
 
 ---

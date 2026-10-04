@@ -1,5 +1,13 @@
 # Design Uber / Ola / Lyft — The Matchmaking Service Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Operations — release & incidents** · Extra case study for [Chapter 14 · Launch Day & Incidents](/tutorials/journey-14-launch-day)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Matchmaking Analogy
 
 Think of a wedding matchmaker in a small town. People come to her saying "I need a partner." She knows everyone in town — who's available, where they live, what they're looking for. She matches people based on proximity, compatibility, and availability. Now scale that to a city with 10 million people, all looking for matches in real-time, and the "partners" (drivers) are constantly moving.

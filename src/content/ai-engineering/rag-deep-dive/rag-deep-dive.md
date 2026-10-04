@@ -1,5 +1,13 @@
 # RAG — Retrieval-Augmented Generation, Built and Measured End to End
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Building with LLMs** — RAG is how you make a model answer from *your* documents: policies, runbooks, product catalogs, tickets. It's the most common production AI pattern, and most of its difficulty is not the LLM — it's search. Backend engineers who know databases have a head start.
 
 ---

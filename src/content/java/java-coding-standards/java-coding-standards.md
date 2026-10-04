@@ -1,5 +1,13 @@
 # Java Coding Standards — The Team Lead / Architect Playbook
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Testing — code quality & review** · ShopNorth uses this in [Chapter 9 · Code Quality — SonarQube & Coverity](/tutorials/journey-09-code-quality)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why This Matters
 
 You join a team of 12 engineers. Everyone writes Java differently. PRs take 3 days to review because every reviewer has different opinions. Bugs slip through because there's no consistent structure. Production incidents happen because someone swallowed an exception.

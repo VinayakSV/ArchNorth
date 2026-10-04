@@ -1,5 +1,13 @@
 # Design Distributed Rate Limiter — The Bouncer at a Club
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Operations — release & incidents** · ShopNorth uses this in [Chapter 14 · Launch Day & Incidents](/tutorials/journey-14-launch-day)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Bouncer Analogy
 
 A nightclub bouncer counts how many people enter per hour. If the limit is 200/hour and 201st person arrives, they're told "come back later." Now imagine 10 entrances to the same club, each with a bouncer. They need to coordinate — the total across ALL entrances can't exceed 200. That's a distributed rate limiter.

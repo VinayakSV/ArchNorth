@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 14 of 15 · Phase: **Operate & Evolve**
+🛒 **The ShopNorth Journey** · Chapter 14 of 15 · Phase: **Operate & Evolve** · SDLC stage: **Operations — release & incidents**
 
 **Previously:** ShopNorth is observable: traces, logs, and metrics tied together, SLOs from the NFRs, monitors with runbooks, synthetic tests every minute, and an automated canary check ([Chapter 13](/tutorials/journey-13-observability)).
 
@@ -178,6 +178,21 @@ No paid orders cancelled; no double charges. Checkout SLO error budget: 18% cons
 
 Sunday morning, the GitOps change scales everything back down, and Kabir reviews the cloud bill. Monday, the postmortem actions become stories in the backlog, next to Ananya's new requirements from what customers did during the sale. **That's the SDLC loop:** operations feed requirements, and the cycle starts again — this time with real data instead of estimates.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — The Sale, Seen From the Cloud
+
+| Before the sale | Why |
+|-----------------|-----|
+| EC2 vCPU quota raised two weeks ahead; On-Demand Capacity Reservations in all 3 zones for the sale window | Scaling can't be blocked by AWS limits or a capacity shortage ([EC2 & Auto Scaling](/tutorials/aws-ec2-autoscaling)) |
+| Route 53 TTLs lowered to 60 s | Any DNS change takes effect quickly ([Networking & VPC](/tutorials/aws-networking-vpc)) |
+| WAF rate rules and Bot Control at the edge | Bots on the flash deal never reach checkout ([CloudFront & Edge](/tutorials/aws-cloudfront)) |
+| RDS failover rehearsed in the game day | The "DB failover" runbook is real, not theoretical ([High Availability & DR](/tutorials/high-availability)) |
+
+During the night, CloudFront served images, assets, and sale pages with a 97% cache hit ratio, so the S3 origins barely noticed the spike. On Sunday morning, Kabir released the capacity reservations along with the scale-down.
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -203,6 +218,10 @@ Sunday morning, the GitOps change scales everything back down, and Kabir reviews
 | [Payment Gateway](/tutorials/payment-gateway) | Provider failures, reconciliation | Backup provider, status checks before cancelling |
 | [Load Balancing](/tutorials/load-balancing) | Health checks, slow start | New pods joining during the spike |
 | [Live Streaming Platform](/tutorials/live-streaming-platform) | Thundering herds at a known start time | Pre-scaling and warming for 8 PM |
+| [Scalability](/tutorials/scalability) | Capacity planning, back-pressure, waiting rooms | Pre-scaling, the waiting room, load tests at 2× |
+| [High Availability & DR](/tutorials/high-availability) | Failover, game days, degradation | The runbooks rehearsed before the sale |
+| [CloudFront & Edge](/tutorials/aws-cloudfront) | Edge caching, WAF, Bot Control | A 97% cache hit ratio and bots kept off the flash deal |
+| [EC2, Load Balancers & Auto Scaling](/tutorials/aws-ec2-autoscaling) | Quotas, capacity reservations, scaling | Making sure EC2 capacity existed at 8 PM |
 
 ## 📚 Extra Case Studies
 

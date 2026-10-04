@@ -1,5 +1,13 @@
 # Messaging & Event Systems — Kafka vs RabbitMQ vs SQS vs SNS, Decided with Real Scenarios
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Architecture Decisions · Communication** — "Should we use Kafka?" is one of the most common architecture questions — and "Kafka for everything" is one of the most common mistakes. This page gives you the mental models, the guarantees each system actually provides, and a decision process grounded in real scenarios.
 
 ---

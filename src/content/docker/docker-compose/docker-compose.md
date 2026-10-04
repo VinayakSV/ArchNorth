@@ -1,5 +1,13 @@
 # Docker Compose — Multi-Container Apps
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — packaging** · ShopNorth uses this in [Chapter 10 · Containerizing with Docker](/tutorials/journey-10-docker)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > A complete, practical guide to Docker Compose — from the basics of defining multi-service stacks to production-grade patterns with health checks, resource limits, secrets, override files, and the honest comparison of when Compose is enough vs when you need Kubernetes.
 
 ---

@@ -1,5 +1,13 @@
 # How to Think in LLD — The Architect's Blueprint Mindset
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · ShopNorth uses this in [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why This Tutorial Exists
 
 Most LLD tutorials show you the final class diagram and say "here's the answer." That's like showing someone a finished building and saying "now you know architecture." **You don't.** You need to understand the PROCESS — how did the architect decide where to put the walls, doors, and windows?

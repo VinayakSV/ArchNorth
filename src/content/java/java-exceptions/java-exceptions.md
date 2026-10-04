@@ -1,5 +1,13 @@
 # Exceptions — Checked, Unchecked, try-with-resources, and Production-Grade Error Handling
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > Exception handling is where "it works on my machine" code and production-grade code differ most visibly.
 
 ---

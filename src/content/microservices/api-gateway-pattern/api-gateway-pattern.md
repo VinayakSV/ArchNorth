@@ -1,5 +1,13 @@
 # API Gateway Pattern — The Front Door of Microservices (and How Not to Turn It into a Monolith)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Microservices · Patterns & Approaches** — Every microservices architecture ends up with a front door. Done well, it centralizes the boring-but-critical concerns — TLS, authentication, rate limiting, routing, observability. Done badly, it becomes a new monolith that every team must queue behind. This page shows both, with a working Spring Cloud Gateway setup.
 
 ---

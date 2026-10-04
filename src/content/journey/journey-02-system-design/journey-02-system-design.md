@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 2 of 15 · Phase: **Plan & Design**
+🛒 **The ShopNorth Journey** · Chapter 2 of 15 · Phase: **Plan & Design** · SDLC stage: **Design — architecture**
 
 **Previously:** The team wrote user stories, acceptance criteria, and NFRs with numbers: 3,000 requests/s and 150 orders/s at the sale peak, no overselling, no double charges, 99.9% availability ([Chapter 1](/tutorials/journey-01-requirements)).
 
@@ -184,6 +184,28 @@ Nothing needs sharding. That's an important result: **the estimate told the team
 | Search down | No search results | Fall back to category browse |
 | One service instance crashes | Some requests fail | Multiple instances, health checks, retries at the gateway for safe (GET) requests |
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Every Box Gets a Service
+
+Priya's diagram is cloud-neutral on purpose: first decide *what* the system needs, then *which service* provides it. On AWS, the boxes become:
+
+| Box in the design | AWS service | Why this one | Learn it |
+|-------------------|-------------|--------------|----------|
+| CDN | CloudFront | Edge locations in Indian cities; private S3 origins | [CloudFront & Edge](/tutorials/aws-cloudfront) |
+| Object storage for images | S3 | Cheap, durable, presigned uploads | [S3](/tutorials/aws-s3) |
+| Load balancer | Application Load Balancer + WAF | HTTP routing, health checks, rate rules | [EC2, Load Balancers & Auto Scaling](/tutorials/aws-ec2-autoscaling) |
+| Services | EKS (Kubernetes) on EC2 nodes | The team knows Kubernetes; GitOps and canaries (Chapters 11-12) | [Containers on AWS](/tutorials/aws-containers) |
+| PostgreSQL | RDS for PostgreSQL, Multi-AZ | Managed failover, backups, and patching | [Databases on AWS](/tutorials/aws-databases) |
+| Redis | ElastiCache | Managed Redis with a replica in another zone | [Databases on AWS](/tutorials/aws-databases) |
+| Kafka | MSK | Kafka without running brokers | [MSK](/tutorials/aws-msk) |
+| Search | OpenSearch Service | A managed search cluster | [Databases on AWS](/tutorials/aws-databases) |
+| Email and SMS providers | Amazon SES for email, an SMS provider, and SNS + SQS in between | Retries and isolation per channel | [SQS & SNS](/tutorials/aws-sqs-sns) |
+
+Three principles from this chapter map straight onto AWS features: scale stateless services horizontally ([Scalability](/tutorials/scalability)), keep stock and money strongly consistent while browsing is eventually consistent ([CAP Theorem & Consistency](/tutorials/cap-theorem)), and remove every single point of failure ([High Availability & DR](/tutorials/high-availability)). [AWS for Developers](/tutorials/aws-start-here) has the full map.
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -210,6 +232,10 @@ Nothing needs sharding. That's an important result: **the estimate told the team
 | [Payment Gateway](/tutorials/payment-gateway) | Idempotency, webhooks, reconciliation | The payment flow |
 | [Notification System](/tutorials/notification-system) | Async multi-channel delivery | Email + SMS confirmations |
 | [Database Decisions](/tutorials/database-decisions) · [Messaging Decisions](/tutorials/messaging-decisions) | Picking stores and brokers | The data store table and Kafka |
+| [Scalability](/tutorials/scalability) | Vertical vs horizontal, the read ladder, back-pressure | Stateless services, caching, events for everything that can wait |
+| [High Availability & DR](/tutorials/high-availability) | Availability math, failover, RPO and RTO | Three zones, Multi-AZ data, a degradation plan per dependency |
+| [CAP Theorem & Consistency](/tutorials/cap-theorem) | CP vs AP, PACELC, consistency models | Strong for stock and payments, eventual for catalog and search |
+| [AWS for Developers](/tutorials/aws-start-here) | The AWS service behind each box | The map from this design to AWS |
 
 ## 📚 Extra Case Studies
 

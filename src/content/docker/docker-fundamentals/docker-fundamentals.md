@@ -1,5 +1,13 @@
 # Docker Fundamentals — Zero to Production Thinking
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — packaging** · ShopNorth uses this in [Chapter 10 · Containerizing with Docker](/tutorials/journey-10-docker)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > A complete, ground-up guide to Docker. By the end you will understand how containers work internally, write production-quality Dockerfiles, manage data and networking, and confidently answer every Docker question asked at senior engineer interviews.
 
 ---

@@ -1,5 +1,13 @@
 # Java 17 — All Features Explained with Real Scenarios
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · ShopNorth uses this in [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why Java 17 Matters
 
 Java 17 is an **LTS (Long-Term Support)** release. It's the version most companies are migrating to. It brings cleaner syntax, better safety, and features that make your code shorter without sacrificing readability.

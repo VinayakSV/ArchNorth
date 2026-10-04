@@ -1,5 +1,13 @@
 # Notification System — Multi-Channel Delivery at Scale (Push, Email, SMS, In-App)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **System Design · Classic Designs** — "Send a notification" sounds trivial until you need to send 50 million of them for a sale, never text a user at 3 AM, never send an OTP twice or zero times, respect opt-outs and telecom regulations, and survive an SMS provider outage. This is the full design.
 
 ---

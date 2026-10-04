@@ -1,5 +1,13 @@
 # Design WhatsApp / Messenger — The Post Office Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · Extra case study for [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Post Office Analogy
 
 Imagine a post office that delivers letters instantly. You write a letter, hand it to the postman, and your friend receives it in milliseconds — even if they're on the other side of the world. If your friend isn't home, the letter waits at their local post office until they pick it up. If both of you are home, you can have a real-time conversation through letters. Now scale this to 2 billion people sending 100 billion messages per day. That's WhatsApp.

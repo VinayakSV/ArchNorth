@@ -1,5 +1,13 @@
 # Distributed Cache — Complete System Design
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Analogy
 
 Imagine a **library** (database) and a **desk** (cache). Every time you need a book, walking to the library takes 5 minutes. But if you keep frequently-used books on your desk, you grab them in 2 seconds.

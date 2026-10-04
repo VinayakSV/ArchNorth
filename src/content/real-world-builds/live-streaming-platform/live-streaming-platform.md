@@ -1,5 +1,13 @@
 # Live Streaming Platform — HotStar Scale
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Operations — release & incidents** · Extra case study for [Chapter 14 · Launch Day & Incidents](/tutorials/journey-14-launch-day)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Problem
 
 IPL final. 25 million concurrent viewers. Each viewer's device requests a new video segment every 2-4 seconds. That's **~10 million requests per second** just for video. Add live chat, real-time scores, ads, and authentication — you're looking at 30-50 million RPS.

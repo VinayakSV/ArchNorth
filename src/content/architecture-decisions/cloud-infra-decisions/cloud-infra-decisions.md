@@ -1,8 +1,16 @@
 # Cloud & Infrastructure Decisions
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## AWS Services — The Decision Tree
 
-You don't need to know every AWS service. You need to know **when to pick which one** for compute, networking, storage, and orchestration.
+You don't need to know every AWS service. You need to know **when to pick which one** for compute, networking, storage, and orchestration. For how each service works day to day — with ShopNorth as the running example — see the [AWS section](/tutorials/aws-start-here).
 
 ---
 
@@ -96,12 +104,12 @@ Extreme low latency (< 1ms) → NLB
 | Factor | RDS | Aurora |
 |--------|-----|--------|
 | Cost | $$ | $$$ (20-30% more) |
-| Read replicas | Up to 5 | Up to 15 |
+| Read replicas | Up to 15 (RDS PostgreSQL can also cascade them) | Up to 15, sharing the cluster's storage |
 | Failover time | 60-120 seconds | < 30 seconds |
 | Storage | Manual provisioning | Auto-scales to 128TB |
 | Replication lag | Seconds | Milliseconds |
 
-**Upgrade to Aurora when**: You need > 5 read replicas, faster failover, or auto-scaling storage. For most apps, RDS is sufficient and cheaper.
+**Upgrade to Aurora when**: You need faster failover, near-zero replica lag, or storage that grows on its own. For most apps, RDS is sufficient and cheaper. (Older material says RDS allows only 5 read replicas; since 2022 it's 15.)
 
 ---
 

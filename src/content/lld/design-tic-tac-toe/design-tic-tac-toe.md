@@ -1,5 +1,13 @@
 # Design Tic-Tac-Toe Game — The Strategy Board Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — security** · Extra case study for [Chapter 7 · Security & Login](/tutorials/journey-07-security)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Strategy Board Analogy
 
 Tic-Tac-Toe seems simple — a 3×3 grid, two players, first to get three in a row wins. But designing it as a system reveals interesting challenges: game state management, AI opponents, win detection algorithms, and if you make it multiplayer online — real-time synchronization, cheating prevention, and matchmaking.

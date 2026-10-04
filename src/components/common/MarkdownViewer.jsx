@@ -111,6 +111,12 @@ const markdownSx = {
     '& > p:first-of-type': { mt: 0 },
     '& > :last-child': { mb: 0 },
   },
+  // "📍 SDLC stage" line at the top of every topic: where it fits in the lifecycle (and the ShopNorth chapter).
+  '& .sdlc-stage': {
+    px: 1.75, py: 1, mb: 3, borderRadius: 2, border: '1px dashed #e67e22',
+    bgcolor: 'rgba(230,126,34,0.07)',
+    '& p': { m: 0, fontSize: { xs: '0.82rem', sm: '0.9rem' }, lineHeight: 1.6 },
+  },
   '& details': {
     my: 1.5, borderRadius: 2, border: '1px solid', borderColor: 'divider',
     bgcolor: 'background.paper', overflow: 'hidden',

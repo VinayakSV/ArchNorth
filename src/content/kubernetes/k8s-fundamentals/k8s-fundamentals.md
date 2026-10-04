@@ -1,5 +1,13 @@
 # Kubernetes Fundamentals — From "I Run Containers" to "The Cluster Runs Them for Me"
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Kubernetes · Fundamentals** — Builds directly on the Docker tutorials. You know how to build and run one container; this page explains how Kubernetes runs hundreds of them, keeps them alive, and why its whole design revolves around one idea: *desired state*.
 
 ---

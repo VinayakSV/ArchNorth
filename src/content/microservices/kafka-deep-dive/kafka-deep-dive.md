@@ -1,5 +1,13 @@
 # Apache Kafka — Deep Dive
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Post Office Analogy
 
 Imagine a **super-fast post office** that never loses a letter:

@@ -1,5 +1,13 @@
 # Service Communication — REST vs gRPC vs Messaging
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Phone Call Analogy
 
 - **REST** = Sending a letter. Simple, everyone understands it, but slow for back-and-forth.

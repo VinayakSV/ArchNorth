@@ -1,5 +1,13 @@
 # How to Think in Architecture — Making Decisions You Won't Regret
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why This Tutorial Exists
 
 Architecture is decision-making. Every day, you choose: SQL or NoSQL? REST or gRPC? Redis or Memcached? AWS or GCP? Most tutorials tell you WHAT each technology does. This tutorial teaches you HOW to evaluate trade-offs and make decisions that hold up under real-world pressure.

@@ -1,5 +1,13 @@
 # Stock Trading Platform — Order Matching, Risk Checks, Market Data, and Deterministic Recovery
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · Extra case study for [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **System Design · Financial Domain** — A trading system is where correctness, fairness, and latency all matter at once. This design covers the two sides interviewers mix up — a **broker** (like Zerodha or Groww, routing customer orders) and an **exchange** (like NSE, matching them) — and goes deep on the matching engine: price-time priority, a single-threaded core, event sourcing, and replay.
 
 ---

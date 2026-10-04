@@ -1,5 +1,13 @@
 # Design BookMyShow — Seat Booking Without Double-Booking
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · ShopNorth uses this in [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Low-Level Design · Classic LLD** — The interviewer doesn't care about your `Movie` class. They care about one moment: two people tap the same seat at the same second. This design gets the model right *and* answers the concurrency, payment-timeout, and idempotency questions that decide the round.
 
 ---

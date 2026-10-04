@@ -1,5 +1,13 @@
 # Deploying Spring Boot on Kubernetes — The Production-Ready Checklist
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Kubernetes · Hands-On** — Everything from the previous Kubernetes pages, applied to the app you actually write: a Spring Boot service. Probes that tell the truth, memory settings the JVM respects, shutdowns that don't drop requests, autoscaling, and a Helm chart to package it all.
 
 ---

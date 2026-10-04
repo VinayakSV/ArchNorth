@@ -1,5 +1,13 @@
 # AI in Production — Evals, Guardrails, Observability & LLMOps
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Production & Process** — Demos are easy; production is where AI features earn trust or lose it. This page covers what turns a prototype into a service you can change safely, defend against attacks, debug at 3 AM, and afford: evals, guardrails, observability, and cost management.
 
 ---

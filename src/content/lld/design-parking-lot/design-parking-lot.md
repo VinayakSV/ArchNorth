@@ -1,5 +1,13 @@
 # Design Parking Lot System — The Hotel Room Booking Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · Extra case study for [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Hotel Analogy
 
 A parking lot is like a hotel — different room types (single, double, suite) for different guests (motorcycle, car, bus). You need to check availability, assign the right room, track check-in/check-out, calculate billing, and handle the case where all rooms are full. The twist: guests arrive and leave unpredictably, and you need real-time availability.

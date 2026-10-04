@@ -3,9 +3,14 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 Copyright (c) 2026 VinayakSV
 
 All tutorial content in the src/content/ directory — including markdown files,
-diagrams, written explanations, and embedded code examples — is licensed under
-the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
-License.
+diagrams, and written explanations — is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+Exception: the code examples in the tutorials (source code, SQL queries,
+configuration files, and commands shown in code blocks) are licensed under
+MIT No Attribution (MIT-0) instead, so you can use them anywhere, including at
+work, without credit. See LICENSE-CODE-EXAMPLES. Diagrams, including Mermaid
+diagram definitions, stay under this license.
 
 You are free to:
   - Share — copy and redistribute the material in any medium or format

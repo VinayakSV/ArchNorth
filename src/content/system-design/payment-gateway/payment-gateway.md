@@ -1,5 +1,13 @@
 # Payment Gateway — Complete System Design
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — services & events** · ShopNorth uses this in [Chapter 6 · Microservices & Events](/tutorials/journey-06-microservices)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## 1. Problem Statement
 
 Design a payment processing system that:

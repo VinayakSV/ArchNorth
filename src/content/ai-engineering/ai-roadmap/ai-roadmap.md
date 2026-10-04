@@ -1,5 +1,13 @@
 # AI Engineer Roadmap — From Full-Stack Developer (or Anyone) to Shipping Production AI, Step by Step
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **AI Engineering · Start Here** — This page is the map for the whole AI Engineering section. It tells you what to learn, in what order, why each step matters, and gives you one small project per stage so you *build* your way up instead of reading your way up.
 
 ---

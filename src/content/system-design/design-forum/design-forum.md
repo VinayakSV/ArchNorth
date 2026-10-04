@@ -1,5 +1,13 @@
 # Design Reddit / Quora / HackerNews — The Town Hall Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — data model** · Extra case study for [Chapter 4 · Data Model & SQL](/tutorials/journey-04-data-sql)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Town Hall Analogy
 
 Imagine a town hall where anyone can stand up and ask a question or share a story. Others vote on whether it's interesting (upvote) or not (downvote). The most popular topics rise to the top of the bulletin board. People can comment, reply to comments, and the whole thing is organized by topics (subreddits/tags). That's a forum system.

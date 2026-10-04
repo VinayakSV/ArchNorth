@@ -1,5 +1,13 @@
 # Fraud Detection System — Complete System Design
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — security** · Extra case study for [Chapter 7 · Security & Login](/tutorials/journey-07-security)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## 1. Problem Statement
 
 Design a real-time fraud detection system that:

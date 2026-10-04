@@ -1,5 +1,13 @@
 # Design a Chess Game — Polymorphism, Legal Moves, Check Detection, and Online Play
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · Extra case study for [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Low-Level Design · Classic LLD** — Chess tests whether you can model rich rules without a 2,000-line `if` statement: polymorphic pieces, a clear separation between "how a piece moves" and "is this move legal", special moves, undo via the Command pattern — and, for senior rounds, what changes when two players play online.
 
 ---

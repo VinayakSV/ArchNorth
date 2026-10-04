@@ -1,5 +1,13 @@
 # Auth0 — Zero to Industry Implementation
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development — security** · ShopNorth uses this in [Chapter 7 · Security & Login](/tutorials/journey-07-security)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > A complete, practitioner-level guide to understanding and implementing Auth0 in real applications — from first principles to production-grade multi-tenant systems.
 
 ---

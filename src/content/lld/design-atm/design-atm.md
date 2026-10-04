@@ -1,5 +1,13 @@
 # Design ATM System — The Vending Machine With Trust Issues
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · Extra case study for [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Vending Machine Analogy
 
 An ATM is like a vending machine — but instead of snacks, it dispenses cash. And instead of trusting you with a coin, it needs to verify your identity, check your bank balance, ensure the cash drawer has enough money, record every transaction, and handle the case where the machine jams mid-dispensing. Oh, and it must do all this while being offline-resilient, tamper-proof, and available 24/7.

@@ -1,5 +1,13 @@
 # Design Traffic Control System — The Orchestra Conductor Analogy
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — low-level design** · Extra case study for [Chapter 3 · Low-Level Design](/tutorials/journey-03-low-level-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Orchestra Conductor Analogy
 
 A traffic control system is like an orchestra conductor. Each intersection is a musician, each road is an instrument. The conductor must ensure no two instruments clash (no two green lights conflict), maintain rhythm (timing cycles), and adapt to the audience (traffic volume). A bad conductor causes chaos — a bad traffic system causes accidents.

@@ -1,5 +1,13 @@
 # Kubernetes Networking — Services, DNS, Ingress & Network Policies
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Deployment — infrastructure & runtime** · ShopNorth uses this in [Chapter 12 · Deploying on Kubernetes](/tutorials/journey-12-kubernetes)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Kubernetes · Networking & Config** — Pods come and go with new IPs every time. This page explains how anything still finds them: from one pod calling another, to a user's browser reaching your API through a load balancer.
 
 ---

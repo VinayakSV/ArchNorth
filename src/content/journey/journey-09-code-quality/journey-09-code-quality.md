@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 9 of 15 · Phase: **Quality**
+🛒 **The ShopNorth Journey** · Chapter 9 of 15 · Phase: **Quality** · SDLC stage: **Testing — code quality & review**
 
 **Previously:** Meera built ShopNorth's test strategy: unit, integration, contract, E2E, smoke, a tagged regression suite, and load tests tied to the NFRs ([Chapter 8](/tutorials/journey-08-testing)).
 
@@ -231,6 +231,14 @@ A gate that blocks too much gets bypassed; a gate that blocks nothing gets ignor
 
 Code quality isn't zero issues; it's **controlled** issues. ShopNorth reserves about 15% of each sprint for technical debt, chosen by where the team feels pain (code that changes often and breaks often), not by the size of the SonarQube issue count. The rule for old code: leave it a little better whenever you touch it.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Infrastructure Code Gets Quality Gates Too
+
+Terraform and SAM templates are code, so they go through the same pipeline: `terraform validate` and `cfn-lint` catch errors, **Trivy's misconfiguration scanner** (the same Trivy that scans images) flags risky settings like public buckets or wide-open security groups, and a `terraform plan` or CloudFormation change set is posted on the pull request for review. In ECR, enhanced scanning keeps checking images after they're pushed, so a vulnerability published next month still raises an alert ([CloudFormation, SAM & CDK](/tutorials/aws-cloudformation), [Containers on AWS](/tutorials/aws-containers)).
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -255,6 +263,7 @@ Code quality isn't zero issues; it's **controlled** issues. ShopNorth reserves a
 | [Auth & Security Decisions](/tutorials/auth-security-decisions) | Secure design | What security hotspots mean |
 | [Docker Fundamentals](/tutorials/docker-fundamentals) | Image layers and security | Container image scanning |
 | [AI-SDLC](/tutorials/ai-sdlc) | AI in reviews, with guardrails | AI first-pass review, human approval |
+| [CloudFormation, SAM & CDK](/tutorials/aws-cloudformation) | Infrastructure as code, change sets, policy checks | Linting and reviewing infrastructure changes |
 
 ## 📚 Extra Case Studies
 

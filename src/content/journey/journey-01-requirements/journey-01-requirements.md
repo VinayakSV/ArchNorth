@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 1 of 15 · Phase: **Plan & Design**
+🛒 **The ShopNorth Journey** · Chapter 1 of 15 · Phase: **Plan & Design** · SDLC stage: **Requirements & planning**
 
 **Previously:** You joined ShopNorth, a fictional online store that must launch its own website before the Diwali sale in 12 weeks ([Start Here](/tutorials/journey-start)).
 
@@ -181,6 +181,22 @@ Six two-week sprints. Each sprint ends with working software deployed to staging
 
 The Definition of Done is where the SDLC becomes real: every item on that list is a later chapter.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Requirements That Shape the Cloud
+
+Some requirements decide cloud choices before any code exists. Ananya and Priya agree on these with Kabir in week 1:
+
+| Requirement | Cloud decision | Learn it |
+|-------------|---------------|----------|
+| Customers are in India; customer data stays in India | Run in AWS **Mumbai (`ap-south-1`)** and keep backups in **Hyderabad (`ap-south-2`)** | [AWS for Developers](/tutorials/aws-start-here) |
+| 99.9% availability for checkout | Every tier spread across **3 availability zones**; Multi-AZ databases | [High Availability & DR](/tutorials/high-availability) |
+| Survive a regional disaster | A written DR plan: **RTO 4 hours, RPO 15 minutes**, signed off by Ananya | [High Availability & DR](/tutorials/high-availability) |
+| 3,000 requests/s at the sale peak | A capacity plan, load tests at 2×, and EC2 quotas raised in advance | [Scalability](/tutorials/scalability), [EC2 & Auto Scaling](/tutorials/aws-ec2-autoscaling) |
+| A fixed monthly budget | AWS Budgets with alerts on every account from day one | [AWS for Developers](/tutorials/aws-start-here) |
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -202,6 +218,8 @@ The Definition of Done is where the SDLC becomes real: every item on that list i
 | [How to Think in System Design](/tutorials/thinking-system-design) | The requirements → estimates → design framework | Clarifying questions and the sale-day estimates |
 | [How to Think in Architecture](/tutorials/thinking-architecture) | Reversible vs irreversible decisions, ADRs | Deciding what to plan up front vs iterate on |
 | [AI-SDLC](/tutorials/ai-sdlc) | Specs and guardrails for AI-assisted delivery | Acceptance criteria written so humans *and* AI assistants can build from them |
+| [Scalability](/tutorials/scalability) | Little's law, the read ladder, capacity planning | Turning 3,000 requests/s into a capacity plan |
+| [AWS for Developers](/tutorials/aws-start-here) | Regions, accounts, costs | Choosing Mumbai; budgets from day one |
 
 ## 📚 Extra Case Studies
 

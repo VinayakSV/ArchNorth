@@ -2,7 +2,7 @@
 
 <div class="callout-journey">
 
-🛒 **The ShopNorth Journey** · Chapter 10 of 15 · Phase: **Ship**
+🛒 **The ShopNorth Journey** · Chapter 10 of 15 · Phase: **Ship** · SDLC stage: **Deployment — packaging**
 
 **Previously:** ShopNorth's code is tested (Chapter 8) and guarded by review, SonarQube, Coverity, and dependency and secret scanning ([Chapter 9](/tutorials/journey-09-code-quality)).
 
@@ -207,6 +207,14 @@ The contractor's next laptop setup takes 20 minutes: install Docker and a JDK, c
 
 **Build once, deploy many.** The image that passed the tests in staging is byte-for-byte the image that runs in production. Rebuilding per environment would mean shipping something that was never tested.
 
+<!-- aws-section:start -->
+
+## ☁️ ShopNorth on AWS — Where the Images Live
+
+The images built in this chapter are pushed to **Amazon ECR** in the `shared` account: one repository per service, **immutable tags** (the commit SHA), enhanced vulnerability scanning, a lifecycle policy that keeps the last 50 images, a **pull-through cache** for base images (no Docker Hub rate limits during scale-out), and replication to Hyderabad for disaster recovery. Staging and production pull with read-only permissions ([Containers on AWS](/tutorials/aws-containers)).
+
+<!-- aws-section:end -->
+
 ## 🏢 Real-World Scenarios
 
 <div class="callout-scenario">
@@ -229,6 +237,7 @@ The contractor's next laptop setup takes 20 minutes: install Docker and a JDK, c
 | [Dockerizing a Spring Boot App](/tutorials/docker-spring-boot) | Layered jars, JVM memory, graceful shutdown | The order-service Dockerfile |
 | [Docker Compose](/tutorials/docker-compose) | Multi-container apps, health checks, profiles | The one-command ShopNorth stack |
 | [Apache Kafka Deep Dive](/tutorials/kafka-deep-dive) | Brokers, listeners, KRaft | The single-node Kafka for local development |
+| [Containers on AWS](/tutorials/aws-containers) | ECR, ECS, EKS, Fargate | ECR repositories, immutable SHA tags, pull-through cache |
 
 ## 📚 Extra Case Studies
 

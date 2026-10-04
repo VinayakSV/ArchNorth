@@ -6,8 +6,11 @@ A personal learning hub built with **React + Vite** for studying system design, 
 
 ## ✨ Features
 
-- **The ShopNorth Journey** — one e-commerce product followed through the whole SDLC (requirements, design, Spring Boot, testing, code quality, Docker, CI/CD, Kubernetes, Datadog, incidents, AI), linked from every topic
-- **System Design Tutorials** — HLD & LLD with mermaid flow diagrams, sequence diagrams, and class diagrams
+- **The ShopNorth Journey** — one e-commerce product followed through the whole SDLC (requirements, design, Spring Boot, testing, code quality, Docker, CI/CD, Kubernetes, Datadog, incidents, AI), linked from every topic, with a ☁️ *ShopNorth on AWS* section in most chapters
+- **SDLC stage on every topic** — each tutorial opens with a 📍 line saying where it fits in the lifecycle and which story chapter uses it
+- **System Design Tutorials** — core concepts (scalability, high availability & DR, CAP and consistency, replication & sharding, consensus), building blocks, and classic designs, plus LLD, with mermaid diagrams
+- **AWS for Developers** — 14 tutorials (IAM, VPC, EC2 & Auto Scaling, Lambda, containers, SQS/SNS, EventBridge, MSK, S3, databases, CloudFront, CloudFormation, CloudWatch), each tied to how ShopNorth uses the service
+- **Practice everywhere** — every tutorial has 🟢🟡🔴 practice questions with answers, a mini project, and interview questions that also work as flashcards
 - **Dark / Light Theme** — Eye-friendly color palette designed to reduce eye strain (warm tones, no pure black/white)
 - **Markdown Rendering** — Full GFM support with syntax highlighting and mermaid diagram rendering
 - **Notes Section** — Create, edit, delete personal notes with localStorage persistence
@@ -29,16 +32,25 @@ ArchNorth/
 │   ├── components/
 │   │   ├── common/                   # MarkdownViewer, MermaidDiagram, ScrollToTop
 │   │   └── layout/                   # Layout, Header (search), Sidebar (tree nav)
-│   ├── content/                      # Tutorial markdown files
-│   │   ├── system-design/            # 7 tutorials (URL shortener, rate limiter, etc.)
-│   │   ├── microservices/            # 6 tutorials (patterns, Kafka, etc.)
-│   │   ├── java/                     # 9 tutorials (collections, concurrency, etc.)
-│   │   ├── architecture-decisions/    # 6 tutorials (DB, caching, messaging, etc.)
-│   │   └── real-world-builds/        # 2 tutorials (data ingestion, live streaming)
+│   ├── content/                      # Tutorial markdown files (132 tutorials)
+│   │   ├── journey/                  # 16 · the ShopNorth Journey (start + 15 chapters)
+│   │   ├── system-design/            # 26 · core concepts, building blocks, classic designs
+│   │   ├── lld/                      # 12 · low-level design
+│   │   ├── real-world-builds/        #  2 · data ingestion, live streaming
+│   │   ├── architecture-decisions/   #  7 · databases, caching, messaging, security, cloud
+│   │   ├── ai-engineering/           # 10 · LLMs, RAG, agents, MCP, LLMOps, AI-SDLC
+│   │   ├── microservices/            #  7 · patterns, communication, sagas, Kafka
+│   │   ├── java/                     # 15 · core Java, collections, concurrency, JVM
+│   │   ├── spring-boot/              #  3 · fundamentals, DI, transactions
+│   │   ├── sql/                      #  6 · queries, joins, window functions, indexing
+│   │   ├── dsa/                      #  5 · problem-solving patterns
+│   │   ├── docker/                   #  3 · fundamentals, Spring Boot images, Compose
+│   │   ├── kubernetes/               #  6 · workloads, networking, config, production
+│   │   └── aws/                      # 14 · AWS for developers
 │   ├── context/                      # React context providers (Theme)
 │   ├── features/
 │   │   ├── tutorials/
-│   │   │   └── tutorialRegistry.js   # Central tutorial config (30 tutorials)
+│   │   │   └── tutorialRegistry.js   # Central tutorial config (order = sidebar and Prev/Next order)
 │   │   └── notes/
 │   ├── hooks/                        # Custom hooks (useThemeMode)
 │   ├── pages/                        # Route-level pages (Dashboard, Tutorials, TutorialDetail)
@@ -306,8 +318,13 @@ Structure:
   □ Registered in tutorialRegistry.js with id, title, description,
     category, subcategory, icon, tags
   □ getCategoryIcon() updated if new category
+  □ Starts with the 📍 SDLC stage block right after the title
+    (<!-- sdlc-stage:start --> … <!-- sdlc-stage:end -->)
+  □ 🏋️ Practice Assignments (🟢 / 🟡 / 🔴, answers in <details>) and a 🛠️ Mini Project
   □ Quick reference / cheat sheet at the end
   □ Closing blockquote with golden rule
+  □ Ends with the 🛒 ShopNorth Journey box linking to the matching chapter
+    (<!-- journey-link:start --> … <!-- journey-link:end -->)
   □ Build passes (npm run build)
 ```
 
@@ -566,7 +583,7 @@ You are free to use, copy, modify, merge, publish, distribute, sublicense, and/o
 
 ### Tutorial Content — Creative Commons BY-NC-SA 4.0
 
-All tutorial content — markdown files, diagrams, written explanations, code examples embedded within tutorials, and any other educational material inside the `src/content/` directory — is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+All tutorial content — markdown files, diagrams, written explanations, and any other educational material inside the `src/content/` directory — is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/), **except the code examples** (see the next section).
 
 This means you **can**:
 - ✅ Read, learn from, and reference the content
@@ -580,12 +597,18 @@ This means you **cannot**:
 
 **Attribution format**: "Content from [ArchNorth](https://github.com/VinayakSV/ArchNorth) by VinayakSV, licensed under CC BY-NC-SA 4.0."
 
+### Code Examples in Tutorials — MIT No Attribution (MIT-0)
+
+The code examples inside the tutorials — source code, SQL queries, configuration files, and commands shown in code blocks — are licensed under [MIT No Attribution (MIT-0)](./LICENSE-CODE-EXAMPLES). You can copy, use, and change them anywhere, including in commercial and work projects, without credit.
+
+Diagrams (including Mermaid diagram definitions) and the written explanations stay under CC BY-NC-SA 4.0. A code block that names a different license or source keeps its own license.
+
 ### Contributing
 
 Contributions are welcome once this project is open for collaboration. By submitting a pull request, you agree that:
 
 1. Your code contributions are licensed under the **MIT License**
-2. Your content contributions (tutorials, markdown, diagrams) are licensed under **CC BY-NC-SA 4.0**
+2. Your content contributions (tutorials, markdown, diagrams) are licensed under **CC BY-NC-SA 4.0**, and the code examples in them under **MIT-0**
 3. You have the right to submit the contribution and it does not violate any third-party rights
 4. The project maintainers may edit, restructure, or remove your contribution as needed
 
@@ -621,4 +644,4 @@ THIS PROJECT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHORS AND 
 
 **Copyright © 2026 VinayakSV. All rights reserved where applicable.**
 
-Project created on April 1, 2026 | Code: [MIT](./LICENSE) | Content: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Project created on April 1, 2026 | Code: [MIT](./LICENSE) | Content: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) | Code examples in tutorials: [MIT-0](./LICENSE-CODE-EXAMPLES)

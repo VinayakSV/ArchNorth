@@ -1,5 +1,13 @@
 # AI-SDLC — Using AI Across the Whole Software Delivery Lifecycle (and How to Actually Get There)
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Maintenance & evolution** · ShopNorth uses this in [Chapter 15 · Evolving with AI](/tutorials/journey-15-ai)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > **Architecture Decisions · AI & ML Integration** — AI coding tools are everywhere, but most teams only use them for autocomplete. AI-SDLC is about using AI deliberately in **every** phase, from requirements to production support, with the guardrails that keep quality, security, and accountability intact. This page is both a concept guide and an adoption playbook.
 
 ---

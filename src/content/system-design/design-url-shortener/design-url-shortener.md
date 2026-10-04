@@ -1,5 +1,13 @@
 # Design URL Shortener (Interview Edition) — The Complete Walkthrough
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · Extra case study for [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Library Card Catalog Analogy
 
 A URL shortener is like a library card catalog. Instead of remembering "Building 3, Floor 2, Aisle 7, Shelf 4, Position 12" (the long URL), you get a short code "B3-2712" that maps to the exact location. The catalog must be fast to look up, never assign the same code to two books, and handle millions of lookups per second.

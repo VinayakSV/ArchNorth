@@ -1,5 +1,13 @@
 # Collections — List, Queue, Set: Picking the Right One Under Pressure
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > `HashMap` has its own deep dive (`hashmap-internals`); this page covers everything else you reach for daily.
 
 ---

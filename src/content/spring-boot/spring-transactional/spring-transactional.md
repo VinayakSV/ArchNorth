@@ -1,5 +1,13 @@
 # @Transactional — Propagation, Isolation, and the Traps That Lose Money
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 > If you're asked one "senior" Spring question, it's likely this one. The traps here cause real production incidents: double charges, lost updates, and phantom data.
 
 ---

@@ -1,5 +1,13 @@
 # How to Think in System Design — The Architect's Mental Model
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Design — architecture** · ShopNorth uses this in [Chapter 2 · System Design (HLD)](/tutorials/journey-02-system-design)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## Why This Tutorial Exists
 
 System design interviews aren't about memorizing "Uber uses QuadTree" or "Netflix uses CDN." They test whether you can **think through a problem you've never seen** and make reasonable decisions under uncertainty. This tutorial teaches you the thinking process — so you can design ANY system, not just the ones you've practiced.
@@ -58,6 +66,8 @@ flowchart TB
 **Key insight**: You're not choosing "consistency OR availability" forever. You're choosing the DEFAULT behavior during failures. Most systems are AP for reads (show cached/stale data) and CP for writes (reject writes if consistency can't be guaranteed). Netflix is AP — showing a slightly stale catalog is fine. A bank is CP — showing wrong balance is not fine.
 
 </div>
+
+**Go deeper:** [CAP Theorem, PACELC & Consistency Models](/tutorials/cap-theorem) covers what CAP really says and how to choose consistency per operation; [Scalability](/tutorials/scalability) and [High Availability & DR](/tutorials/high-availability) cover Steps 5 and 6 in depth.
 
 ---
 

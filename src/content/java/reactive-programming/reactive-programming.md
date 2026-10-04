@@ -1,5 +1,13 @@
 # Reactive Programming in Java — Complete Scenario-Based Guide
 
+<!-- sdlc-stage:start -->
+<div class="sdlc-stage">
+
+📍 **SDLC stage: Development** · ShopNorth uses this in [Chapter 5 · Building with Spring Boot](/tutorials/journey-05-spring-boot)
+
+</div>
+<!-- sdlc-stage:end -->
+
 ## The Problem Reactive Solves
 
 You have an API that fetches user profile, their orders, and recommendations — 3 downstream calls, each taking 200ms.

@@ -26,10 +26,31 @@ const LIBRARIES = [
   { name: 'Inter and Fira Code fonts', use: 'Text and code fonts, bundled with the site', license: 'OFL-1.1', url: 'https://fontsource.org' },
 ];
 
+const PROJECT_LICENSES = [
+  {
+    covers: 'Source code',
+    name: 'MIT License',
+    summary: 'Use, change, and share it freely, keeping the copyright notice.',
+    url: `${REPO_URL}/blob/master/LICENSE`,
+  },
+  {
+    covers: 'Tutorial text and diagrams',
+    name: 'CC BY-NC-SA 4.0',
+    summary: 'Share and adapt them with credit, for non-commercial use, under the same license.',
+    url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+  },
+  {
+    covers: 'Code examples in the tutorials',
+    name: 'MIT-0',
+    summary: 'Copy and use them anywhere, even at work, with no credit needed.',
+    url: `${REPO_URL}/blob/master/LICENSE-CODE-EXAMPLES`,
+  },
+];
+
 const TERMS = [
   <><strong>Free and non-commercial.</strong> No ads, no paid features, and no account.</>,
   <>The tutorials were written with AI assistance and reviewed by the author. They can still contain mistakes or go out of date, so check the official documentation before relying on them, and please <Link component={RouterLink} to="/feedback">report errors</Link>.</>,
-  <><strong>Code examples are for learning.</strong> Review, test, and secure them before using them in a real system.</>,
+  <><strong>Code examples are free to reuse</strong> (MIT-0), even at work. They&apos;re written for teaching, so review, test, and secure them before using them in a real system.</>,
   <>The content is general education and interview preparation, not professional advice. Everything is provided <strong>“as is”</strong>, without warranty of any kind (see the licenses above).</>,
   <>Links to other websites are provided for convenience. Those sites have their own terms and privacy policies, and ArchNorth doesn&apos;t control them.</>,
   <>ArchNorth may change, move, or go offline at any time.</>,
@@ -40,7 +61,7 @@ const LEGAL_NOTES = [
   <>Case studies about real companies are simplified illustrations based on public information. They are not official or insider descriptions of how those companies work.</>,
   <><strong>ShopNorth is fictional.</strong> So are the other example companies, and the people, bookings, and other sample data in the tutorials and the SQL playground. Any resemblance to real companies or people is coincidental.</>,
   <>The interview questions are original practice questions written for learning. They are not taken from any company&apos;s actual interviews.</>,
-  <>The “ArchNorth” name and logo are <strong>not covered</strong> by the MIT or CC license.</>,
+  <>The “ArchNorth” name and logo are <strong>not covered</strong> by any of these licenses.</>,
   <>Every bundled package uses a <strong>permissive license</strong> (MIT, Apache-2.0, ISC, BSD, or OFL for the fonts). The build stops if a package with a copyleft (GPL, LGPL, AGPL) or unknown license appears. DOMPurify, used by Mermaid, is dual-licensed MPL-2.0 or Apache-2.0 and is used under Apache-2.0.</>,
   <>If you believe something here infringes your copyright or other rights, email {email} with the details. It will be reviewed promptly, and corrected or removed.</>,
 ];
@@ -93,25 +114,19 @@ export default function LicenseReport() {
 
       {sectionTitle('Project Licensing')}
       <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-        <Paper variant="outlined" sx={{ p: 2, flex: 1, minWidth: 250 }}>
-          <Typography variant="subtitle2" color="text.secondary">Source code</Typography>
-          <Typography variant="h6" fontWeight={600}>MIT License</Typography>
-          <Typography variant="body2" color="text.secondary">
-            Use, change, and share it freely, keeping the copyright notice.{' '}
-            <Link href={`${REPO_URL}/blob/master/LICENSE`} {...external}>Read the license</Link>
-          </Typography>
-        </Paper>
-        <Paper variant="outlined" sx={{ p: 2, flex: 1, minWidth: 250 }}>
-          <Typography variant="subtitle2" color="text.secondary">Tutorial content (src/content/)</Typography>
-          <Typography variant="h6" fontWeight={600}>CC BY-NC-SA 4.0</Typography>
-          <Typography variant="body2" color="text.secondary">
-            Share and adapt it with credit, for non-commercial use, under the same license.{' '}
-            <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" {...external}>Read the license</Link>
-          </Typography>
-        </Paper>
+        {PROJECT_LICENSES.map((lic) => (
+          <Paper key={lic.name} variant="outlined" sx={{ p: 2, flex: 1, minWidth: 250 }}>
+            <Typography variant="subtitle2" color="text.secondary">{lic.covers}</Typography>
+            <Typography variant="h6" fontWeight={600}>{lic.name}</Typography>
+            <Typography variant="body2" color="text.secondary">
+              {lic.summary}{' '}
+              <Link href={lic.url} {...external}>Read the license</Link>
+            </Typography>
+          </Paper>
+        ))}
       </Box>
       <Typography variant="body2" color="text.secondary" sx={{ mt: 1.5 }}>
-        To credit the content, write: “Content from ArchNorth by {AUTHOR}, licensed under CC BY-NC-SA 4.0”, with a link to the source code.
+        To credit the tutorial text, write: “Content from ArchNorth by {AUTHOR}, licensed under CC BY-NC-SA 4.0”, with a link to the source code. Code examples need no credit.
       </Typography>
 
       {sectionTitle('Third-Party Libraries')}
@@ -155,7 +170,7 @@ export default function LicenseReport() {
 
       <Paper variant="outlined" sx={{ p: 2, mt: 4, bgcolor: 'action.hover' }}>
         <Typography variant="body2" color="text.secondary" textAlign="center">
-          Copyright © 2026 {AUTHOR} — Code: MIT | Content: CC BY-NC-SA 4.0
+          Copyright © 2026 {AUTHOR} — Code: MIT | Content: CC BY-NC-SA 4.0 | Code examples: MIT-0
         </Typography>
       </Paper>
     </Box>
